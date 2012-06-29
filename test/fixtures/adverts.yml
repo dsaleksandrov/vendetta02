@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  email: MyString
+  employment_type: 1
+  town_country: MyText
+  work_category: MyString
+  base_demands: MyText
+  instructions: MyText
+  company: 
+
+two:
+  email: MyString
+  employment_type: 1
+  town_country: MyText
+  work_category: MyString
+  base_demands: MyText
+  instructions: MyText
+  company: 

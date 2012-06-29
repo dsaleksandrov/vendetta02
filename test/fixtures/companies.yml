@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  desc: MyText
+  site: MyString
+  logo: 
+  icon: 
+  agent_name: MyString
+  user: 
+
+two:
+  name: MyString
+  desc: MyText
+  site: MyString
+  logo: 
+  icon: 
+  agent_name: MyString
+  user: 

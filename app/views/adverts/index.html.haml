@@ -1,0 +1,27 @@
+%h1 Listing adverts
+%table
+  %tr
+    %th Email
+    %th Employment type
+    %th Town country
+    %th Work category
+    %th Base demands
+    %th Instructions
+    %th Company
+    %th
+    %th
+    %th
+  - @adverts.each do |advert|
+    %tr
+      %td= advert.email
+      %td= advert.employment_type
+      %td= advert.town_country
+      %td= advert.work_category
+      %td= advert.base_demands
+      %td= advert.instructions
+      %td= advert.company
+      %td= link_to 'Show', advert
+      %td= link_to 'Edit', edit_advert_path(advert)
+      %td= link_to 'Destroy', advert, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Advert', new_advert_path

@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %b Email:
+  = @advert.email
+%p
+  %b Employment type:
+  = @advert.employment_type
+%p
+  %b Town country:
+  = @advert.town_country
+%p
+  %b Work category:
+  = @advert.work_category
+%p
+  %b Base demands:
+  = @advert.base_demands
+%p
+  %b Instructions:
+  = @advert.instructions
+%p
+  %b Company:
+  = @advert.company
+= link_to 'Edit', edit_advert_path(@advert)
+|
+\#{link_to 'Back', adverts_path}
