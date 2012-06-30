@@ -41,6 +41,8 @@ class AdvertsController < ApplicationController
   # POST /adverts.xml
   def create
     @advert = Advert.new(params[:advert])
+    @company = Company.find(1);
+    @advert.company=@company;
 
     respond_to do |format|
       if @advert.save

@@ -19,7 +19,7 @@
       %td= advert.work_category
       %td= advert.base_demands
       %td= advert.instructions
-      %td= advert.company
+      %td= advert.company.name
       %td= link_to 'Show', advert
       %td= link_to 'Edit', edit_advert_path(advert)
       %td= link_to 'Destroy', advert, :confirm => 'Are you sure?', :method => :delete

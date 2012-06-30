@@ -41,6 +41,9 @@ class CompaniesController < ApplicationController
   # POST /companies.xml
   def create
     @company = Company.new(params[:company])
+    @user= User.find(1);
+    @company.user=@user;
+
 
     respond_to do |format|
       if @company.save

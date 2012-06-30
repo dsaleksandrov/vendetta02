@@ -19,7 +19,7 @@
       %td= company.logo
       %td= company.icon
       %td= company.agent_name
-      %td= company.user
+      %td= company.user.name
       %td= link_to 'Show', company
       %td= link_to 'Edit', edit_company_path(company)
       %td= link_to 'Destroy', company, :confirm => 'Are you sure?', :method => :delete
