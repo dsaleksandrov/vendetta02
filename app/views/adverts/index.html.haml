@@ -1,4 +1,13 @@
-%h1 Listing adverts
+%h1 Адверты такие супер охуенные:)
+
+ 
+
+= form_tag adverts_path, :method => :get do
+  %p
+    = text_field_tag :search, params[:search]
+    = submit_tag "Search", :name => nil
+ 
+
 %table
   %tr
     %th Email
@@ -8,9 +17,17 @@
     %th Base demands
     %th Instructions
     %th Company
+    %th Name
+    %th Desc
+    %th Site
+    %th Logo
+    %th Icon
+    %th Agent name
+    %th User
     %th
     %th
     %th
+
   - @adverts.each do |advert|
     %tr
       %td= advert.email
@@ -19,9 +36,18 @@
       %td= advert.work_category
       %td= advert.base_demands
       %td= advert.instructions
-      %td= advert.company.name
+      %td= advert.Company
+      %td= advert.name
+      %td= advert.desc
+      %td= advert.site
+      %td= advert.logo
+      %td= advert.icon
+      %td= advert.agent_name
+      %td= advert.user
       %td= link_to 'Show', advert
       %td= link_to 'Edit', edit_advert_path(advert)
       %td= link_to 'Destroy', advert, :confirm => 'Are you sure?', :method => :delete
-%br/
+
+%br
+
 = link_to 'New Advert', new_advert_path

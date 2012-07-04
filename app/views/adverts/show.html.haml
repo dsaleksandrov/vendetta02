@@ -1,9 +1,10 @@
 %p#notice= notice
+
 %p
   %b Email:
   = @advert.email
 %p
-  %b Employment type:
+  %b Фриланс/Фулл тайм/Прайм тайм?:
   = @advert.employment_type
 %p
   %b Town country:
@@ -19,7 +20,29 @@
   = @advert.instructions
 %p
   %b Company:
-  = @advert.company.name
+  = @advert.Company
+%p
+  %b Name:
+  = @advert.name
+%p
+  %b Desc:
+  = @advert.desc
+%p
+  %b Site:
+  = @advert.site
+%p
+  %b Logo:
+  = @advert.logo
+%p
+  %b Icon:
+  = @advert.icon
+%p
+  %b Agent name:
+  = @advert.agent_name
+%p
+  %b User:
+  = @advert.user
+
 = link_to 'Edit', edit_advert_path(@advert)
-|
-\#{link_to 'Back', adverts_path}
+\|
+= link_to 'Back', adverts_path

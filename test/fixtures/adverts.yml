@@ -1,4 +1,4 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
   email: MyString
@@ -7,7 +7,14 @@ one:
   work_category: MyString
   base_demands: MyText
   instructions: MyText
-  company: 
+  Company: MyString
+  name: MyString
+  desc: MyText
+  site: MyString
+  logo: 
+  icon: 
+  agent_name: MyString
+  user: 
 
 two:
   email: MyString
@@ -16,4 +23,11 @@ two:
   work_category: MyString
   base_demands: MyText
   instructions: MyText
-  company: 
+  Company: MyString
+  name: MyString
+  desc: MyText
+  site: MyString
+  logo: 
+  icon: 
+  agent_name: MyString
+  user: 

@@ -18,30 +18,30 @@ class AdvertsControllerTest < ActionController::TestCase
 
   test "should create advert" do
     assert_difference('Advert.count') do
-      post :create, :advert => @advert.attributes
+      post :create, advert: { Company: @advert.Company, agent_name: @advert.agent_name, base_demands: @advert.base_demands, desc: @advert.desc, email: @advert.email, employment_type: @advert.employment_type, icon: @advert.icon, instructions: @advert.instructions, logo: @advert.logo, name: @advert.name, site: @advert.site, town_country: @advert.town_country, work_category: @advert.work_category }
     end
 
     assert_redirected_to advert_path(assigns(:advert))
   end
 
   test "should show advert" do
-    get :show, :id => @advert.to_param
+    get :show, id: @advert
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => @advert.to_param
+    get :edit, id: @advert
     assert_response :success
   end
 
   test "should update advert" do
-    put :update, :id => @advert.to_param, :advert => @advert.attributes
+    put :update, id: @advert, advert: { Company: @advert.Company, agent_name: @advert.agent_name, base_demands: @advert.base_demands, desc: @advert.desc, email: @advert.email, employment_type: @advert.employment_type, icon: @advert.icon, instructions: @advert.instructions, logo: @advert.logo, name: @advert.name, site: @advert.site, town_country: @advert.town_country, work_category: @advert.work_category }
     assert_redirected_to advert_path(assigns(:advert))
   end
 
   test "should destroy advert" do
     assert_difference('Advert.count', -1) do
-      delete :destroy, :id => @advert.to_param
+      delete :destroy, id: @advert
     end
 
     assert_redirected_to adverts_path

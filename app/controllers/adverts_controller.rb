@@ -1,34 +1,35 @@
 class AdvertsController < ApplicationController
   # GET /adverts
-  # GET /adverts.xml
+  # GET /adverts.json
   def index
-    @adverts = Advert.all
+    #@adverts = Advert.all
+   @adverts = Advert.search params [:search]
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @adverts }
+      format.json { render json: @adverts }
     end
   end
 
   # GET /adverts/1
-  # GET /adverts/1.xml
+  # GET /adverts/1.json
   def show
     @advert = Advert.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @advert }
+      format.json { render json: @advert }
     end
   end
 
   # GET /adverts/new
-  # GET /adverts/new.xml
+  # GET /adverts/new.json
   def new
     @advert = Advert.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @advert }
+      format.json { render json: @advert }
     end
   end
 
@@ -38,48 +39,48 @@ class AdvertsController < ApplicationController
   end
 
   # POST /adverts
-  # POST /adverts.xml
+  # POST /adverts.json
   def create
     @advert = Advert.new(params[:advert])
-    @company = Company.find(1);
-    @advert.company=@company;
+    @advert.user=User.find(1);
+
 
     respond_to do |format|
       if @advert.save
-        format.html { redirect_to(@advert, :notice => 'Advert was successfully created.') }
-        format.xml  { render :xml => @advert, :status => :created, :location => @advert }
+        format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+        format.json { render json: @advert, status: :created, location: @advert }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @advert.errors, :status => :unprocessable_entity }
+        format.html { render action: "new" }
+        format.json { render json: @advert.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PUT /adverts/1
-  # PUT /adverts/1.xml
+  # PUT /adverts/1.json
   def update
     @advert = Advert.find(params[:id])
 
     respond_to do |format|
       if @advert.update_attributes(params[:advert])
-        format.html { redirect_to(@advert, :notice => 'Advert was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to @advert, notice: 'Advert was successfully updated.' }
+        format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @advert.errors, :status => :unprocessable_entity }
+        format.html { render action: "edit" }
+        format.json { render json: @advert.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /adverts/1
-  # DELETE /adverts/1.xml
+  # DELETE /adverts/1.json
   def destroy
     @advert = Advert.find(params[:id])
     @advert.destroy
 
     respond_to do |format|
-      format.html { redirect_to(adverts_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to adverts_url }
+      format.json { head :no_content }
     end
   end
 end

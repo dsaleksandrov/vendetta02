@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627211624) do
+ActiveRecord::Schema.define(:version => 20120702172725) do
 
   create_table "adverts", :force => true do |t|
     t.string   "email"
@@ -20,12 +20,7 @@ ActiveRecord::Schema.define(:version => 20120627211624) do
     t.string   "work_category"
     t.text     "base_demands"
     t.text     "instructions"
-    t.integer  "company_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "companies", :force => true do |t|
+    t.string   "Company"
     t.string   "name"
     t.text     "desc"
     t.string   "site"
@@ -33,9 +28,11 @@ ActiveRecord::Schema.define(:version => 20120627211624) do
     t.binary   "icon"
     t.string   "agent_name"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  add_index "adverts", ["user_id"], :name => "index_adverts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
