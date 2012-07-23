@@ -4,10 +4,9 @@ class Advert < ActiveRecord::Base
    
 
   define_index do
-    #indexes :company, :sortable => true
-    #indexes [company, work_category], :as => :desc_advert
-    indexes :id
-    has id
+    indexes :Company
+    indexes [company, work_category,email], as =>search
+    
   end
 
 
