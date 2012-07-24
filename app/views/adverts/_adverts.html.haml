@@ -1,0 +1,15 @@
+
+%table{:class =>'pretty'}
+  %tr
+    %th name
+    %th pricess
+   
+  - @adverts.each do |advert|
+    %tr
+      %td= advert.email
+      %td= advert.Company
+
+= will_paginate @adverts
+
+
+

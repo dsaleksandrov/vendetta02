@@ -4,8 +4,8 @@ class Advert < ActiveRecord::Base
    
 
   define_index do
-    indexes :Company
-    indexes [company, work_category,email], as =>search
+   
+    indexes [work_category,email], as =>search
     
   end
 

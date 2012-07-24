@@ -1,16 +1,13 @@
 class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
-  def index
- #@adverts = Advert.all
+def index
   @adverts = Advert.search params[:search]
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json {head :no_content }
-      format.js {render :js => @adverts}
-    end
-  end
+       respond_to do |format|
+        format.html
+        format.js
+     end
+ end
 
   # GET /adverts/1
   # GET /adverts/1.json
