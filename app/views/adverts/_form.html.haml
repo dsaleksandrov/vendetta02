@@ -1,6 +1,6 @@
  
 
-= form_for @advert do |f|
+= form_for @advert, :html => { :class => 'form-horizontal' } do |f|
   -if @advert.errors.any?
     #error_explanation
       %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
@@ -8,46 +8,46 @@
         - @advert.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :email
-    = f.text_field :email
- 
-  .field
-    (Full time/ Contract / Freelance)
-    = f.number_field :employment_type
-  .field
-    (Country / Town of work)
-    = f.text_area :town_country
-  .field
-    (Professiya)
-    = f.text_field :work_category
-  .field
-    (Osnovnie trebovaniya)
-    = f.text_area :base_demands
-  .field
-    (Instrukcii)
-    = f.text_area :instructions
-  .field
-    (Kompaniya)
-    = f.text_field :Company
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :desc
-    = f.text_area :desc
-  .field
-    (Opisanie vakansii)
-    = f.text_field :site
-  .field
-    (Logotip)
-    = f.text_field :logo
-  .field
-    = f.label :icon
-    = f.text_field :icon
-  .field
-    (Agent name)
-    = f.text_field :agent_name
-   
+  %fieldset{:style=>"margin-top:50px;"}
+    %legend Создание нового объявления
+    .control-group
+      = f.label :email,:class => "control-label"
+      .controls
+        = f.text_field :email
+    .control-group
+      %label{:class=>"control-label"} Город
+      .controls
+        = f.text_field :town_country
+    .control-group
+      %label{:class=>"control-label"} Кого ищем?
+      .controls
+        = f.text_field :work_category
+    .control-group
+      %label{:class=>"control-label"} Основные требования
+      .controls
+        = f.text_field :base_demands
+    .control-group
+      %label{:class=>"control-label"} Название компании
+      .controls
+        = f.text_field :Company
   .actions
     = f.submit 'Save'
+  /.field
+  /  = f.label :name
+  /  = f.text_field :name
+  /.field
+  /  = f.label :desc
+  /  = f.text_area :desc
+  /.field
+  /  (Opisanie vakansii)
+  /  = f.text_field :site 
+  /.field
+  /  (Logotip)
+  /  = f.text_field :logo
+  /.field
+  /  = f.label :icon
+  /  = f.text_field :icon
+  /.field
+  /  (Agent name)
+  / = f.text_field :agent_name
+  

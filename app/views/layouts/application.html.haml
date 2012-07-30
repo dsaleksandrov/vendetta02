@@ -11,5 +11,22 @@
     <style>#search {width: 500px; }
     </style>
   %body
-    .container
-      = yield
+    %div{:class=>"navbar navbar-fixed-top"}
+      %div{:class=>"navbar-inner",:style=>"color:#999999"}
+        %div{:class=>"container"}
+          %a{:class=>"brand",:href=>"#",:style=>"float:right;padding-left:0;padding-right:0;color:lightgoldenrodyellow"}JoBlBobl
+  .container
+    .row
+      .span9
+        = yield
+      .span3{:style =>"margin-top:100px;"} 
+        %h2 adout us
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      
+    
+
+    
+
+
+
+ 

@@ -1,14 +1,14 @@
 
-%table{:class =>'pretty'}
-  %tr
-    %th name
-    %th pricess
-   
-  - @adverts.each do |advert|
-    %tr
-      %td= advert.email
-      %td= advert.Company
-
+.hero-unit
+  %table{:class =>'table table-bordered table-striped'}
+    - @adverts.each do |advert|
+      %tr
+        %td= advert.work_category
+        %td= advert.town_country
+        %td= advert.Company
+      
+      
+      
 = will_paginate @adverts
 
 
