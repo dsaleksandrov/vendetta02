@@ -11,13 +11,16 @@
     <style>#search {width: 500px; }
     </style>
   %body
-    %div{:class=>"navbar navbar-fixed-top"}
-      %div{:class=>"navbar-inner",:style=>"color:#999999"}
-        %div{:class=>"container"}
-          %a{:class=>"brand",:href=>"#",:style=>"float:right;padding-left:0;padding-right:0;color:lightgoldenrodyellow"}JoBlBobl
   .container
     .row
       .span9
+        #user_nav
+        - if user_signed_in?
+          Signed in as #{current_user.email}. Not you?
+          \#{link_to "Sign out", destroy_user_session_path}
+        - else
+          = link_to "Sign up", new_user_registration_path
+          or #{link_to "sign in", new_user_session_path}
         = yield
       .span3{:style =>"margin-top:100px;"} 
         %h2 adout us
@@ -26,7 +29,6 @@
     
 
     
-
 
 
  

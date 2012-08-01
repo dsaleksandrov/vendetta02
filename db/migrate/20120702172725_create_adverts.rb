@@ -18,6 +18,11 @@ class CreateAdverts < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :adverts, :user_id
+   add_index :adverts, :user_id
   end
+
+ 
+
+
+
 end

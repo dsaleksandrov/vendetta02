@@ -12,6 +12,7 @@ gem 'will_paginate'
 
 gem 'nifty-generators'
 gem 'thinking-sphinx', '2.0.10'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.

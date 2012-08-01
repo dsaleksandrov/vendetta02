@@ -1,4 +1,8 @@
 Vendetta02::Application.routes.draw do
+devise_for :users do
+  get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+end
+
   resources :adverts
 
   resources :companies
@@ -7,6 +11,9 @@ Vendetta02::Application.routes.draw do
 
 
 root :to => "adverts#index"
+
+
+
 
 
   # The priority is based upon order of creation:

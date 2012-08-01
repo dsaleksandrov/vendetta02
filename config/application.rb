@@ -38,5 +38,7 @@ module Vendetta02
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.secret_token = 'e517bf031fb842120426412fd293e0ca86c277a0308777b9d29c7ea6b05b54bbc49d2b08dae542059a4cbd2d01601a12282e974b4b25a2d9a62bbfab54652a0f'
+
   end
 end

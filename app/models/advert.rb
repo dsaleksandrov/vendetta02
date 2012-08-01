@@ -5,7 +5,7 @@ class Advert < ActiveRecord::Base
 
   define_index do
    indexes [work_category,email], as =>search
-  end
+   end
 
 
 
