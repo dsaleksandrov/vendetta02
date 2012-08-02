@@ -14,6 +14,10 @@ gem 'nifty-generators'
 gem 'thinking-sphinx', '2.0.10'
 gem 'devise'
 
+
+#mail gem
+gem 'tlsmail'  
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
