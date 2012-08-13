@@ -26,3 +26,6 @@ class CreateAdverts < ActiveRecord::Migration
 
 
 end
+
+
+ 

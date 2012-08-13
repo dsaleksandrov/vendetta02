@@ -43,8 +43,15 @@ if !anyone_signed_in?
   # POST /adverts
   # POST /adverts.json
   def create
+ 
     @advert = Advert.new(params[:advert])
     @advert.user=User.find(1);
+      unless params[:employment_type].nil?
+        @advert.employment_type=params[:employment_type]
+       end
+       unless params[:base_demands].nil?
+        @advert.base_demands=params[:base_demands]
+       end
 
 
     respond_to do |format|

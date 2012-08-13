@@ -1,0 +1,72 @@
+ 
+
+= form_for @advert, :html => { :class => 'form-horizontal' } do |f|
+  -if @advert.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
+      %ul
+        - @advert.errors.full_messages.each do |msg|
+          %li= msg
+
+  %fieldset{:style=>"margin-top:50px;"}
+    %legend Создание новой вакансии
+    .control-group
+      %label{:class=>"control-label"} Название вакансии
+      .controls
+        = f.text_field :work_category, :class =>"vacancy-field"
+    .control-group
+      %label{:class => "control-label"} Тип занятости
+      .controls
+        %label{:class =>"radio"}
+          %input{:id=>"workingType1",:type=>"radio",:checked=> (@advert.employment_type == "fulltime"),:value=>"fulltime",:name=>"employment_type"}
+          %span{:class=>"label label-info"} Полная занятость
+        %label{:class =>"radio"}
+          %input{:id=>"workingType2",:type=>"radio",:checked=>(@advert.employment_type == "parttime"),:value=>"parttime",:name=>"employment_type"}
+          %span{:class=>"label label-success"} Частичная занятость
+        %label{:class =>"radio"}
+          %input{:id=>"workingType3",:type=>"radio",:checked=>(@advert.employment_type == "remote"),:value=>"remote",:name=>"employment_type"}
+          %span{:class=>"label label-warning"} Удаленная работа
+        %label{:class =>"radio"}
+          %input{:id=>"workingType4",:type=>"radio",:checked=>(@advert.employment_type == "forone"),:value=>"forone",:name=>"employment_type"}
+          %span{:class=>"label"} Работа на один раз
+    .control-group
+      %label{:class=>"control-label"} Город, страна
+      .controls
+        = f.text_field :town_country,:class =>"vacancy-field"
+    .control-group
+      %label{:class=>"control-label"} Сайт компании или email для связи
+      .controls
+        = f.text_field :email,:class =>"vacancy-field"
+    .control-group
+      %label{:class=>"control-label"} Описание вакансии, основные требования
+      .controls
+        %textarea#aboutVacancy{:name => "base_demands"} #{@advert.base_demands}
+        :javascript
+          CKEDITOR.replace( 'aboutVacancy' );
+    .control-group
+      %label{:class=>"control-label"} Название компании
+      .controls
+        = f.text_field :Company,:class =>"vacancy-field"
+    .div
+      /.#{@advert.base_demands.html_safe}
+  .actions
+    = f.submit 'Save'
+  /.field
+  /  = f.label :name
+  /  = f.text_field :name
+  /.field
+  /  = f.label :desc
+  /  = f.text_area :desc
+  /.field
+  /  (Opisanie vakansii)
+  /  = f.text_field :site 
+  /.field
+  /  (Logotip)
+  /  = f.text_field :logo
+  /.field
+  /  = f.label :icon
+  /  = f.text_field :icon
+  /.field
+  /  (Agent name)
+  / = f.text_field :agent_name
+  

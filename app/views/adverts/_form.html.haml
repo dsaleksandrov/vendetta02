@@ -9,27 +9,44 @@
           %li= msg
 
   %fieldset{:style=>"margin-top:50px;"}
-    %legend Создание нового объявления
+    %legend Создание новой вакансии
     .control-group
-      = f.label :email,:class => "control-label"
+      %label{:class=>"control-label"} Название вакансии
       .controls
-        = f.text_field :email
+        = f.text_field :work_category, :class =>"vacancy-field"
     .control-group
-      %label{:class=>"control-label"} Город
+      %label{:class => "control-label"} Тип занятости
       .controls
-        = f.text_field :town_country
+        %label{:class =>"radio"}
+          %input{:id=>"workingType1",:type=>"radio",:checked=>"true",:value=>"fulltime",:name=>"employment_type"}
+          %span{:class=>"label label-info"} Полная занятость 
+        %label{:class =>"radio"}
+          %input{:id=>"workingType2",:type=>"radio",:value=>"parttime",:name=>"employment_type"}
+          %span{:class=>"label label-success"} Частичная занятость
+        %label{:class =>"radio"}
+          %input{:id=>"workingType3",:type=>"radio",:value=>"remote",:name=>"employment_type"}
+          %span{:class=>"label label-warning"} Удаленная работа
+        %label{:class =>"radio"}
+          %input{:id=>"workingType4",:type=>"radio",:value=>"forone",:name=>"employment_type"}
+          %span{:class=>"label"} Работа на один раз
     .control-group
-      %label{:class=>"control-label"} Кого ищем?
+      %label{:class=>"control-label"} Город, страна
       .controls
-        = f.text_field :work_category
+        = f.text_field :town_country,:class =>"vacancy-field"
     .control-group
-      %label{:class=>"control-label"} Основные требования
+      %label{:class=>"control-label"} Сайт компании или email для связи
       .controls
-        = f.text_field :base_demands
+        = f.text_field :email,:class =>"vacancy-field"
+    .control-group
+      %label{:class=>"control-label"} Описание вакансии, основные требования
+      .controls
+        %textarea#aboutVacancy{:name => "base_demands"} &lt;p&gt;Initial value.&lt;/p&gt;
+        :javascript
+          CKEDITOR.replace( 'aboutVacancy' );
     .control-group
       %label{:class=>"control-label"} Название компании
       .controls
-        = f.text_field :Company
+        = f.text_field :Company,:class =>"vacancy-field"
   .actions
     = f.submit 'Save'
   /.field
