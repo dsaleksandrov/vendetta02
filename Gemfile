@@ -14,6 +14,11 @@ gem 'nifty-generators'
 gem 'thinking-sphinx', '2.0.10'
 gem 'devise'
 
+gem 'nifty-generators'
+gem 'mocha', :group => :test
+
+gem "rmagick"
+gem "carrierwave"
 
 #mail gem
 gem 'tlsmail'  

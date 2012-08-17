@@ -5,7 +5,7 @@
   = @advert.email
 %p
   %b Фриланс/Фулл тайм/Прайм тайм?:
-  = @advert.employment_type
+  = @advert.employment_type   
 %p
   %b Town country:
   = @advert.town_country
@@ -32,7 +32,7 @@
   = @advert.site
 %p
   %b Logo:
-  = @advert.logo
+  = image_tag @advert.logo if @advert.logo?
 %p
   %b Icon:
   = @advert.icon

@@ -9,7 +9,7 @@
           %li= msg
 
   %fieldset{:style=>"margin-top:50px;"}
-    %legend Создание новой вакансии
+    %legend Редактирование вакансии
     .control-group
       %label{:class=>"control-label"} Название вакансии
       .controls
@@ -37,6 +37,10 @@
       %label{:class=>"control-label"} Сайт компании или email для связи
       .controls
         = f.text_field :email,:class =>"vacancy-field"
+    .control-group
+      %label{:class=>"control-label"} Логотип компании
+      .controls
+        = f.file_field :logo
     .control-group
       %label{:class=>"control-label"} Описание вакансии, основные требования
       .controls

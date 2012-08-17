@@ -38,6 +38,12 @@
       .controls
         = f.text_field :email,:class =>"vacancy-field"
     .control-group
+      %label{:class=>"control-label"} Логотип компании
+      .controls
+        #loader{:class=>"loading"}
+        %img{:hidden=>"true"} 
+        = f.file_field :logo,{:id=>"logo_upload"}
+    .control-group
       %label{:class=>"control-label"} Описание вакансии, основные требования
       .controls
         %textarea#aboutVacancy{:name => "base_demands"} &lt;p&gt;Initial value.&lt;/p&gt;
@@ -67,4 +73,3 @@
   /.field
   /  (Agent name)
   / = f.text_field :agent_name
-  

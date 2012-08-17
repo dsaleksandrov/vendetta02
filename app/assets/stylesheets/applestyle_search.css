@@ -26,3 +26,84 @@
     }
 .control-label{font-weight: bold;}
 #advert_work_category{size:300;height: 30px;width: 250px;}
+
+#header{ margin: 0 auto;
+    width: 920px;
+
+}
+
+#header #menu {
+    float: right;
+    line-height: 2em;
+    vertical-align: top;
+}
+
+#menu {
+
+ font-size: 15px;
+ }
+
+#header {
+    height: 2em;
+    margin-top: 2em;
+        margin-bottom: 100px;
+}
+
+#header #add_job {
+    float: left;
+    margin-left: 2em;
+}
+
+#header #logo, #header #logo a {
+    height: 2em;
+    min-height: 30px;
+}
+#header #logo {
+    background: url("/images/logotype.png?1343997384") no-repeat scroll 50% 50% transparent;
+    float: left;
+    margin-top: -5px;
+    overflow: hidden;
+    text-indent: -10000px;
+    width: 180px;
+}
+#header #logo a {
+    display: block;
+}
+
+
+
+
+#loader {
+  border: 1px solid #ccc;
+  width: 500px;
+  height: 500px;
+}
+#container{background-color:white;}
+.hero-unit{background-color:white;}
+
+/** 
+ * While we're having the loading class set.
+ * Removig it, will remove the loading message
+ */
+#loader.loading {
+  background: url(/images/spinner.gif) no-repeat center center;
+}
+
+
+.subnav-fixed {
+    border-color: #D5D5D5;
+    border-radius: 0 0 0 0;
+    border-width: 0 0 1px;
+    box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);
+    left: 0;
+    right: 0;}
+
+.subnav {
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(center top , #F5F5F5 0%, #EEEEEE 100%);
+    background-repeat: repeat-x;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px 4px 4px 4px;
+    height: 36px;
+    width: 100%;
+}

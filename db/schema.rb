@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813082459) do
+ActiveRecord::Schema.define(:version => 20120814093600) do
 
   create_table "adverts", :force => true do |t|
     t.string   "email"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20120813082459) do
     t.string   "name"
     t.text     "desc"
     t.string   "site"
-    t.binary   "logo"
+    t.string   "logo"
     t.binary   "icon"
     t.string   "agent_name"
     t.integer  "user_id"

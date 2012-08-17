@@ -2,8 +2,8 @@
 %html
   %head
     %link{:rel=>"shortcut icon",:href=>"../images/up.png  ",:type=>"image/x-icon"}
+    = javascript_include_tag "jquery", :media=>"all"
     = javascript_include_tag "application"
-    = javascript_include_tag "jquery.min"
     = javascript_include_tag "ckeditor/ckeditor"
     = javascript_include_tag "bootstrap", :media=>"all"
     = stylesheet_link_tag "bootstrap"
@@ -12,16 +12,29 @@
     <style>#adverts_search {margin-top: 100px; }
     </style>
   %body
-  .container
+  #header
+    %table{:width=>"100%"}
+      %tr
+        %td
+          %table
+            %tr
+              %td
+                %p{:style=>"font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;font-size:35px;margin-right:20px;"}
+                  Likes
+                  %span{:color=>"red"}
+                    Work!
+              %td 
+                = link_to 'Добавить вакансию', new_advert_path,:class=>"btn btn-large btn-info"
+        %td
+          #menu
+            - if user_signed_in?
+              #{current_user.email}x
+              \#{link_to "Выйти", destroy_user_session_path}
+            - else
+              #{link_to "Войти", new_user_session_path}
+  .container{:id=>"container",:height=>"100%"}
     .row
       .span9
-        #user_nav
-        - if user_signed_in?
-          Signed in as #{current_user.email}. Not you?
-          \#{link_to "Sign out", destroy_user_session_path}
-        - else
-          = link_to "Sign up", new_user_registration_path
-          or #{link_to "sign in", new_user_session_path}
         = yield
       .span3{:style =>"margin-top:100px;"} 
         %h2 adout us
