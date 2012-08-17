@@ -9,8 +9,6 @@
     = stylesheet_link_tag "bootstrap"
     = stylesheet_link_tag "applestyle_search"
     = csrf_meta_tag
-    <style>#adverts_search {margin-top: 100px; }
-    </style>
   %body
   #header
     %table{:width=>"100%"}
@@ -28,17 +26,12 @@
         %td
           #menu
             - if user_signed_in?
-              #{current_user.email}x
+              #{current_user.email}
               \#{link_to "Выйти", destroy_user_session_path}
             - else
               #{link_to "Войти", new_user_session_path}
-  .container{:id=>"container",:height=>"100%"}
-    .row
-      .span9
-        = yield
-      .span3{:style =>"margin-top:100px;"} 
-        %h2 adout us
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  = yield
+    
       
     
 

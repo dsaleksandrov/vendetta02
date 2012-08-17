@@ -1,8 +1,9 @@
-= form_tag adverts_path, :method => :get, :id => "adverts_search", :remote => true do
-  %p
-    = text_field_tag :search, params[:search]
-    -#= submit_tag "Search", :name => nil
-
-
-  %div{:id => 'adverts'}
-    = render 'adverts'
+.container{:id=>"container"}
+  = form_tag adverts_path, :method => :get, :id => "adverts_search", :remote => true do
+    %div{:class=>"breadcrumb",:style=>"width:60%;margin-left:6%;display:inline-block;"}
+      %div{:id=>"keyword",:style=>"display:inline-block;float:left"}
+        =text_field_tag :search,params[:search], :placeholder=>"Ключевое слово"
+      %div{:id=>"location",:style=>"display:inline-block;float:right"}
+        =text_field_tag :town,params[:town],:placeholder=>"Город"
+    %div{:id => 'adverts'}
+      = render 'adverts'
