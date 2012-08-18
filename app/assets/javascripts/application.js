@@ -1,3 +1,7 @@
+function onClickTableCell(id) {
+window.location = "/adverts/"+id;
+}
+
 
   $(function() {
   $("#search").keyup(function() {

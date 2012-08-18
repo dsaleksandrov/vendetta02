@@ -1,5 +1,23 @@
+.btn-info{width:150px;}
+.top-bar {
+    background: url("../images/top-bar-white.png") repeat-x scroll 0 -5px transparent;
+    border-bottom: medium none;
+    box-shadow: none;
+    filter: none;
+    height: 50px;
+    margin-bottom: -5px;}
 
 
+.label-warning{background-color:#ED8845; }
+.label{padding-top: 5px;padding-bottom: 5px;font-family: Arial;font-weight: normal;font-size: 12px;  }
+.table-striped tr:hover {
+    cursor: pointer;
+}
+.alert{padding: 0;}
+
+.stacked {
+    box-shadow: 0 5px 0 -4px #FFFFFF, 0 5px 0 -3px #C2C0B8, 0 11px 0 -8px #FFFFFF, 0 11px 0 -7px #C2C0B8, 0 17px 0 -12px #FFFFFF, 0 17px 0 -11px #C2C0B8 !important;
+}
 
 
 .text {
@@ -8,19 +26,23 @@
     body{background: url(../images/pattern4.png) repeat scroll 0 0 #F4F4F4}
     #adverts_search {margin-top: 10px; }
 #search {
-    background: url(../images/search-white.png) no-repeat 10px 6px #fcfcfc;
+    background: url(../images/search-white.png) no-repeat 10px 15px #fcfcfc;
     border: 1px solid #d1d1d1;
      width: 200px;
-    padding: 6px 40px 6px 35px;
+     height: 30px;
+     font-size: 20px;
+    padding: 10px 60px 6px 35px;
    }
  
 
 
 #town {
-    background: url(../images/search-white.png) no-repeat 10px 6px #fcfcfc;
+    background: url(../images/search-white.png) no-repeat 10px 15px #fcfcfc;
     border: 1px solid #d1d1d1;
     width: 170px;
-    padding: 6px 40px 6px 35px;
+    padding: 10px 60px 6px 35px;
+    height: 30px;
+     font-size: 20px;
    }
  
 
@@ -42,6 +64,8 @@
     vertical-align: top;
 }
 
+#addVacansyButton{float: right;}
+
 #menu {
 
  font-size: 15px;
@@ -49,8 +73,8 @@
 
 #header {
     height: 2em;
-    margin-top: 2em;
-        margin-bottom: 100px;
+    margin-top: 1em;
+    margin-bottom: 7em;
 }
 
 #header #add_job {
@@ -119,3 +143,5 @@ border-radius:3px 3px 3px 3px;
     height: 36px;
     width: 100%;
 }
+
+#menu{font-size: 17px;}
