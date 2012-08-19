@@ -1,3 +1,16 @@
+.span3{background-color: white;vertical-align: top;}
+#mainformdiv{width:90%;margin-left:6%;}
+.container{width: 1024px;}
+.span9{background-color: white;width: 740px;}
+ 
+#aboutdiv{float: right;}
+#div_work_type{margin-top: 6px;}
+#work_img_div{float: left;display: inline-block;}
+#work_towncountry_div{display: inline-block;margin-top: 10px;}
+#div_time_create{margin-top: 10px;}
+#work_town{display: inline-block;}
+
+#work_cat_div{display: inline-block;font-weight: bold;font-size: 17px;margin-bottom: 7px;}
 .btn-info{width:150px;}
 .top-bar {
     background: url("../images/top-bar-white.png") repeat-x scroll 0 -5px transparent;
@@ -12,6 +25,9 @@
 .label{padding-top: 5px;padding-bottom: 5px;font-family: Arial;font-weight: normal;font-size: 12px;  }
 .table-striped tr:hover {
     cursor: pointer;
+}
+.table-striped tr {
+    height: 65px;
 }
 .alert{padding: 0;}
 
@@ -76,6 +92,18 @@
     margin-top: 1em;
     margin-bottom: 7em;
 }
+
+#bottom{margin: 0 auto;
+    width: 920px;
+    line-height: 2em;
+    vertical-align: bottom;
+    height: 2em;
+    margin-top: 1em;
+    margin-bottom: 7em;
+}
+
+
+
 
 #header #add_job {
     float: left;

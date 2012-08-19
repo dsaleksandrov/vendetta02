@@ -1,29 +1,35 @@
-.container{:id=>"container"}
-  = form_tag adverts_path, :method => :get, :id => "adverts_search", :remote => true do
-    %div{:style=>"width:65%;margin-left:6%;"}
-      %hr
-      %div{:id=>"keyword",:style=>"display:inline-block;float:left"}
-        =text_field_tag :search,params[:search], :placeholder=>"Ключевое слово"
-      %div{:id=>"location",:style=>"display:inline-block;float:right"}
-        =text_field_tag :town,params[:town],:placeholder=>"Город"
-      
-      %div{:class=>"alert alert-info",:style=>"height:50px;display:inline-block;margin-top:10px;width:100%"}
-        .controls{:style=>"display:inline-block;margin-left:10px;"}
-          %label{:class =>"radio"}
-            %input{:id=>"workingType1",:type=>"radio",:checked=>"true",:value=>"fulltime",:name=>"employment_type"}
-            %span{:class=>"label label-info"} Полная занятость
-        .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
-          %label{:class =>"radio"}
-            %input{:id=>"workingType2",:type=>"radio",:value=>"parttime",:name=>"employment_type"}
-            %span{:class=>"label label-success"} Частичная занятость
-        .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
-          %label{:class =>"radio"}
-            %input{:id=>"workingType3",:type=>"radio",:value=>"remote",:name=>"employment_type"}
-            %span{:class=>"label label-warning"} Удаленная работа
-        .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
-          %label{:class =>"radio"}
-            %input{:id=>"workingType4",:type=>"radio",:value=>"forone",:name=>"employment_type"}
-            %span{:class=>"label"} Работа на один раз
-      %hr 
-    %div{:id => 'adverts'}
-      = render 'adverts'
+.container
+  .row
+    .span9
+      = form_tag adverts_path, :method => :get, :id => "adverts_search", :remote => true do
+        %div{:id=>"mainformdiv"}
+          %hr
+          %div{:id=>"keyword",:style=>"display:inline-block;float:left"}
+            =text_field_tag :search,params[:search], :placeholder=>"Ключевое слово"
+          %div{:id=>"location",:style=>"display:inline-block;float:right"}
+            =text_field_tag :town,params[:town],:placeholder=>"Город"
+          
+          %div{:class=>"alert alert-info",:style=>"height:50px;display:inline-block;margin-top:10px;width:100%"}
+            .controls{:style=>"display:inline-block;margin-left:10px;"}
+              %label{:class =>"radio"}
+                %input{:id=>"workingType1",:type=>"radio",:checked=>"true",:value=>"fulltime",:name=>"employment_type"}
+                %span{:class=>"label label-info"} Полная занятость
+            .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
+              %label{:class =>"radio"}
+                %input{:id=>"workingType2",:type=>"radio",:value=>"parttime",:name=>"employment_type"}
+                %span{:class=>"label label-success"} Частичная занятость
+            .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
+              %label{:class =>"radio"}
+                %input{:id=>"workingType3",:type=>"radio",:value=>"remote",:name=>"employment_type"}
+                %span{:class=>"label label-warning"} Удаленная работа
+            .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
+              %label{:class =>"radio"}
+                %input{:id=>"workingType4",:type=>"radio",:value=>"forone",:name=>"employment_type"}
+                %span{:class=>"label"} Работа на один раз
+          %hr 
+      %div{:id => 'adverts'}
+        = render 'adverts'  
+    .span3 
+      %h2 adout us
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        
