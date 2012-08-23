@@ -4,11 +4,23 @@ window.location = "/adverts/"+id;
 
 
   $(function() {
+  
   $("#search").keyup(function() {
     
     $.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
     return false;
   });
+
+$("#town").keyup(function() {
+    
+    $.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
+    return false;
+  });
+
+
+ 
+
+  
 
    $("#logo_upload").change(function() {
      if ($("#logo_upload").val()!=null){

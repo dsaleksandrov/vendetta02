@@ -5,8 +5,10 @@ class Advert < ActiveRecord::Base
   mount_uploader :logo, ImageUploader
 
   define_index do
-   indexes [work_category,email], as =>search
-   end
+   indexes [work_category,email,town_country], as =>search
+   indexes town_country, :as => :town_country
+   has town_country, :as=>:town_country
+ end
 
 
 

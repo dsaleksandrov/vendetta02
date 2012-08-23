@@ -1,8 +1,19 @@
+# coding: utf-8
 class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
 def index
+town=  params[:town]
+ if !town.nil? && !town.blank?
+ #@adverts = Advert.search params[:search], :conditions => {:town_country => town}
+@adverts = Advert.search params[:search],:with_all => {:town_country => "Москва, Piter"}
+ 
+
+ else      
   @adverts = Advert.search params[:search]
+end
+
+
        respond_to do |format|
         format.html
         format.js
