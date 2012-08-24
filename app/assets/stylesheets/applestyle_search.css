@@ -1,5 +1,8 @@
+ 
+.well{margin-top: 30px;border-color: #BCE8F1;}
 
-.hero-unit{padding: 0px;padding-left: 40px;padding-right: 23px;}
+.alert-info{background-color:#F5F5F5}
+.hero-unit{padding: 0px;padding-left: 40px;padding-right: 23px; background:url("../images/pattern4.png") repeat scroll 0 0 transparent}
 table{
 border-right:1px solid #EEEEEE;
  border-left:1px solid #EEEEEE;   
@@ -7,7 +10,7 @@ border-right:1px solid #EEEEEE;
 .left-container{
  width: 73%;
  float:left;
- 
+
 }
 
 .right-container{width: 100%;
@@ -72,7 +75,7 @@ border-right:1px solid #EEEEEE;
 
 #mainformdiv{width:90%;margin-left:6%;}
 
-.container{width: 1024px;position: relative;background-color: white;}
+.container{width: 1024px;position: relative;}
 
   
 #aboutdiv{float: right;}

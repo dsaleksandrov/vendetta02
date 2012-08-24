@@ -1,75 +1,70 @@
- 
-
-= form_for @advert, :html => { :class => 'form-horizontal' } do |f|
-  -if @advert.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
-      %ul
-        - @advert.errors.full_messages.each do |msg|
-          %li= msg
-
-  %fieldset{:style=>"margin-top:50px;"}
-    %legend Создание новой вакансии
-    .control-group
-      %label{:class=>"control-label"} Название вакансии
-      .controls
-        = f.text_field :work_category, :class =>"vacancy-field"
-    .control-group
-      %label{:class => "control-label"} Тип занятости
-      .controls
-        %label{:class =>"radio"}
-          %input{:id=>"workingType1",:type=>"radio",:checked=>"true",:value=>"fulltime",:name=>"employment_type"}
-          %span{:class=>"label label-info"} Полная занятость 
-        %label{:class =>"radio"}
-          %input{:id=>"workingType2",:type=>"radio",:value=>"parttime",:name=>"employment_type"}
-          %span{:class=>"label label-success"} Частичная занятость
-        %label{:class =>"radio"}
-          %input{:id=>"workingType3",:type=>"radio",:value=>"remote",:name=>"employment_type"}
-          %span{:class=>"label label-warning"} Удаленная работа
-        %label{:class =>"radio"}
-          %input{:id=>"workingType4",:type=>"radio",:value=>"forone",:name=>"employment_type"}
-          %span{:class=>"label"} Работа на один раз
-    .control-group
-      %label{:class=>"control-label"} Город, страна
-      .controls
-        = f.text_field :town_country,:class =>"vacancy-field"
-    .control-group
-      %label{:class=>"control-label"} Сайт компании или email для связи
-      .controls
-        = f.text_field :email,:class =>"vacancy-field"
-    .control-group
-      %label{:class=>"control-label"} Логотип компании
-      .controls
-        #loader{:class=>"loading"}
-        %img{:hidden=>"true"} 
-        = f.file_field :logo,{:id=>"logo_upload"}
-    .control-group
-      %label{:class=>"control-label"} Описание вакансии, основные требования
-      .controls
-        %textarea#aboutVacancy{:name => "base_demands"} &lt;p&gt;Initial value.&lt;/p&gt;
-        :javascript
-          CKEDITOR.replace( 'aboutVacancy' );
-    .control-group
-      %label{:class=>"control-label"} Название компании
-      .controls
-        = f.text_field :Company,:class =>"vacancy-field"
-  .actions
-    = f.submit 'Save'
-  /.field
-  /  = f.label :name
-  /  = f.text_field :name
-  /.field
-  /  = f.label :desc
-  /  = f.text_area :desc
-  /.field
-  /  (Opisanie vakansii)
-  /  = f.text_field :site 
-  /.field
-  /  (Logotip)
-  /  = f.text_field :logo
-  /.field
-  /  = f.label :icon
-  /  = f.text_field :icon
-  /.field
-  /  (Agent name)
-  / = f.text_field :agent_name
+.container
+  .left-container
+    .right-container
+      .row-left
+        .hero-unit
+          = form_for @advert, :html => { :class => 'form-horizontal' } do |f|
+            -if @advert.errors.any?
+              #error_explanation
+                %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
+                %ul
+                  - @advert.errors.full_messages.each do |msg|
+                    %li= msg
+            .well          
+              %fieldset{:style=>"margin-top:50px;"}
+                %legend Создание новой вакансии
+                .control-group
+                  %label{:class=>"control-label"} Название вакансии
+                  .controls
+                    = f.text_field :work_category, :class =>"vacancy-field"
+                .control-group
+                  %label{:class => "control-label"} Тип занятости
+                  .controls
+                    %label{:class =>"radio"}
+                      %input{:id=>"workingType1",:type=>"radio",:checked=>"true",:value=>"fulltime",:name=>"employment_type"}
+                      %span{:class=>"label label-info"} Полная занятость 
+                    %label{:class =>"radio",:style=>"margin-top:10px;"}
+                      %input{:id=>"workingType2",:type=>"radio",:value=>"parttime",:name=>"employment_type"}
+                      %span{:class=>"label label-success"} Частичная занятость
+                    %label{:class =>"radio",:style=>"margin-top:10px;"}
+                      %input{:id=>"workingType3",:type=>"radio",:value=>"remote",:name=>"employment_type"}
+                      %span{:class=>"label label-warning"} Удаленная работа
+                    %label{:class =>"radio",:style=>"margin-top:10px;"}
+                      %input{:id=>"workingType4",:type=>"radio",:value=>"forone",:name=>"employment_type"}
+                      %span{:class=>"label"} Работа на один раз
+                .control-group
+                  %label{:class=>"control-label"} Город, страна
+                  .controls
+                    = f.text_field :town_country,:class =>"vacancy-field"
+                .control-group
+                  %label{:class=>"control-label"} Название компании
+                  .controls
+                    = f.text_field :Company,:class =>"vacancy-field"
+                .control-group
+                  %label{:class=>"control-label"} Сайт компании или email для связи
+                  .controls
+                    = f.text_field :email,:class =>"vacancy-field"
+                .control-group
+                  %label{:class=>"control-label"} Логотип компании
+                  .controls
+                    = f.file_field :logo,{:id=>"logo_upload"}
+                .control-group
+                  %label{:class=>"control-label"} Описание вакансии, основные требования
+                  .controls
+                    %textarea#aboutVacancy{:name => "base_demands"} &lt;p&gt;Initial value.&lt;/p&gt;
+                    :javascript
+                      CKEDITOR.replace( 'aboutVacancy' );
+            .actions{:style=>"float:right"}
+              %input{:type=>"submit",:value=>"Предосмотр",:class=>"btn btn-large btn-info"}
+              %input{:type=>"submit",:value=>"Сохранить",:class=>"btn btn-large btn-primary"}
+          
+      .row-right
+        %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}
+          .aboutheader Лучшая работа для студентов!
+          .aboutwork
+            %ul
+              %li Только лучшие вакансии!
+              %li Нет утомительной регистрации!=)
+              %li Мы находим работу, которую Вы ищите!
+              %li Наш сайт посещают молодые, амбициозные люди=)!
+              %li Работаем с душой=)
