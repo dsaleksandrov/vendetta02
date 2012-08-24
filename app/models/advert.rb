@@ -7,8 +7,9 @@ class Advert < ActiveRecord::Base
   define_index do
    indexes [work_category,email,town_country], as =>search
    indexes town_country, :as => :town_country
-   has town_country, :as=>:town_country
- end
+   indexes employment_type, :as => :employment_type
+   
+  end
 
 
 

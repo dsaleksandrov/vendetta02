@@ -3,14 +3,72 @@ class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
 def index
+condition=nil
+fulltime = params[:fulltime]
+parttime = params[:parttime]
+remote = params[:remote]
+forone = params[:forone]
+
+if !fulltime.nil? && !fulltime.blank?
+condition = fulltime
+end
+
+if !condition.nil? && !condition.blank?
+      if !parttime.nil? && !parttime.blank?
+        condition = condition + " | parttime"
+      end
+else
+      if !parttime.nil? && !parttime.blank?
+        condition = "parttime"
+      end
+end
+
+
+
+
+if !condition.nil? && !condition.blank?
+      if !remote.nil? && !remote.blank?
+        condition = condition + " | remote"
+      end
+else
+      if !remote.nil? && !remote.blank?
+        condition = "remote"
+      end
+end
+
+
+
+
+if !condition.nil? && !condition.blank?
+      if !forone.nil? && !forone.blank?
+        condition = condition + " | forone"
+      end
+else
+      if !forone.nil? && !forone.blank?
+        condition = "forone"
+      end
+end
+
+
+
+
+
+
 town=  params[:town]
  if !town.nil? && !town.blank?
- #@adverts = Advert.search params[:search], :conditions => {:town_country => town}
-@adverts = Advert.search params[:search],:with_all => {:town_country => "Москва, Piter"}
- 
+      if condition.nil?
+        @adverts = Advert.search params[:search], :conditions => {:town_country => params[:town]}
+      else
+        @adverts = Advert.search params[:search], :conditions => {:town_country => params[:town],:employment_type=>condition}
+      end
+     
 
- else      
-  @adverts = Advert.search params[:search]
+ else
+   if condition.nil?      
+    @adverts = Advert.search params[:search]
+  else
+    @adverts = Advert.search params[:search], :conditions => {:employment_type=>condition}
+  end
 end
 
 

@@ -5,11 +5,40 @@ window.location = "/adverts/"+id;
 
   $(function() {
   
+  $("#fulltime").change(function() {
+    $.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
+    return false;
+  });
+
+
+  $("#parttime").change(function() {
+    $.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
+    return false;
+  });
+
+
+
+  $("#remote").change(function() {
+    $.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
+    return false;
+  });
+
+  
+  $("#forone").change(function() {
+    $.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
+    return false;
+  });
+
+
+
   $("#search").keyup(function() {
     
     $.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
     return false;
   });
+
+
+
 
 $("#town").keyup(function() {
     
