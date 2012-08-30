@@ -1,2 +1,53 @@
-#preview-content{:style=>"backgound-color:black;"}
-  = render 'preview'
+.container
+  .left-container
+    .right-container
+      .row-left
+        .hero-unit#advertform
+          = form_for @advert,:action=>"/adverts/create", :html => { :class => 'form-horizontal' },:remote => true,:multipart => true  do |f|
+            -if @advert.errors.any?
+              #error_explanation
+                %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
+                %ul
+                  - @advert.errors.full_messages.each do |msg|
+                    %li= msg
+            .well
+              %table{:class =>'table'}
+                %tr
+                  %td
+                    %img{:src=>"#{@advert.logo}",:height=>"50",:width=>"80",:style=>"margin-left:10px;"}
+                  %td
+                    #work_cat_div
+                      =@advert.work_category
+                    #work_company_name_div
+                      =@advert.Company
+                  %td
+                    #div_work_type
+                      -if @advert.employment_type == 'fulltime'
+                        %span{:class=>"label label-info"} Полная занятость
+                      -if @advert.employment_type == 'parttime'
+                        %span{:class=>"label label-success"} Частичная занятость
+                      -if @advert.employment_type == 'remote'
+                        %span{:class=>"label label-warning"} Удаленная работа
+                      -if @advert.employment_type == 'forone'
+                        %span{:class=>"label"} Работа на один раз
+                  %td
+                    #work_town
+                      #work_img_div
+                        %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
+                      #work_towncountry_div
+                        =@advert.town_country
+              #basedemands-view
+                Описание вакансии и требования:
+                #basedemands-content
+                  #text
+                    #{@advert.base_demands.html_safe}        
+      .row-right
+        %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}
+          .aboutheader Лучшая работа для студентов!
+          .aboutwork
+            %ul
+              %li Только лучшие вакансии!
+              %li Нет утомительной регистрации!=)
+              %li Мы находим работу, которую Вы ищите!
+              %li Наш сайт посещают молодые, амбициозные люди=)!
+              %li Работаем с душой=)

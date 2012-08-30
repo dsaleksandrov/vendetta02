@@ -7,61 +7,27 @@ window.location = "/adverts/"+id;
 
 
  $('#show-preview-link').click(function(e) {
+    $("#new_advert").attr("action", "/adverts/preview");
+    $("#new_advert").submit();
+ return false;
+});
 
- 
-    var url = $(this).attr('href');
-    var dialog_form = $('<div id="dialog-form">Loading form...</div>').dialog({
-      autoOpen: false,
-      width: 520,
-      modal: true,
-      open: function() {
-        return $(this).load(url + ' #preview-content');
-      },
-      close: function() {
-        $('#dialog-form').remove();
-      }
-    });
-    dialog_form.dialog('open');
-    e.preventDefault();
-  
+
+
+ $('#save-link').click(function(e) {
+
+
 
 return false;
-
-  });
-
+});
 
 
-
- $('#new_advert').submit(function() {  
-    var valuesToSubmit = $(this).serialize();
-    $.ajax({
-        url: $(this).attr('action'), //sumbits it to the given url of the form
-        data: valuesToSubmit,
-        dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
-    }).success(function(json){
  
-    });
-    
 
-  var url = $(this).attr('href');
-    var dialog_form = $('<div id="dialog-form">Loading form...</div>').dialog({
-      autoOpen: false,
-      width: 520,
-      modal: true,
-      open: function() {
-        return $(this).load(url + ' #preview-content');
-      },
-      close: function() {
-        $('#dialog-form').remove();
-      }
-    });
-    dialog_form.dialog('open');
-    e.preventDefault();
-  
 
-    return false; // prevents normal behaviour
 
-    });
+
+
 
 
  

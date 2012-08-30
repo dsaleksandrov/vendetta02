@@ -81,8 +81,30 @@ end
 # GET /adverts/preview
 # GET /adverts/preview.json
 def preview
-  logger.info("ALALALALAL, PATH")
- 
+    logger.info("1Preview page begin load1")
+
+    @advert = Advert.new(params[:advert])
+    @advert.user=User.find(1);
+      unless params[:employment_type].nil?
+        @advert.employment_type=params[:employment_type]
+       end
+       unless params[:base_demands].nil?
+        @advert.base_demands=params[:base_demands]
+       end
+
+    logger.info("Preview page begin load")
+    respond_to do |format|
+     # if @advert.save
+      #  format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+        #format.json { render json: @advert, status: :created, location: @advert }
+     # else
+        format.html { render action: "preview" }
+        format.json  
+     # end
+    end
+
+
+  
  end
 
 
