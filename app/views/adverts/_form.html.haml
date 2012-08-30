@@ -2,15 +2,15 @@
   .left-container
     .right-container
       .row-left
-        .hero-unit
-          = form_for @advert, :html => { :class => 'form-horizontal' } do |f|
+        .hero-unit#advertform
+          = form_for @advert,:action=>"/adverts/create", :html => { :class => 'form-horizontal' },:remote => true,:multipart => true  do |f|
             -if @advert.errors.any?
               #error_explanation
                 %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
                 %ul
                   - @advert.errors.full_messages.each do |msg|
                     %li= msg
-            .well          
+            .well
               %fieldset{:style=>"margin-top:50px;"}
                 %legend Создание новой вакансии
                 .control-group
@@ -22,7 +22,7 @@
                   .controls
                     %label{:class =>"radio"}
                       %input{:id=>"workingType1",:type=>"radio",:checked=>"true",:value=>"fulltime",:name=>"employment_type"}
-                      %span{:class=>"label label-info"} Полная занятость 
+                      %span{:class=>"label label-info"} Полная занятость
                     %label{:class =>"radio",:style=>"margin-top:10px;"}
                       %input{:id=>"workingType2",:type=>"radio",:value=>"parttime",:name=>"employment_type"}
                       %span{:class=>"label label-success"} Частичная занятость
@@ -55,8 +55,8 @@
                     :javascript
                       CKEDITOR.replace( 'aboutVacancy' );
             .actions{:style=>"float:right"}
-              %input{:type=>"submit",:value=>"Предосмотр",:class=>"btn btn-large btn-info"}
-              %input{:type=>"submit",:value=>"Сохранить",:class=>"btn btn-large btn-primary"}
+              %input#show-preview-link{:value=>"Предосмотр",:class=>"btn btn-large btn-info",:type=>"submit"}
+              %input#save-link{:value=>"Сохранить",:class=>"btn btn-large btn-primary",:type=>"submit"}
           
       .row-right
         %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}

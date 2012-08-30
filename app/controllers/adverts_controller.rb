@@ -23,9 +23,7 @@ else
       end
 end
 
-
-
-
+ 
 if !condition.nil? && !condition.blank?
       if !remote.nil? && !remote.blank?
         condition = condition + " | remote"
@@ -78,6 +76,16 @@ end
      end
  end
 
+
+
+# GET /adverts/preview
+# GET /adverts/preview.json
+def preview
+  logger.info("ALALALALAL, PATH")
+ 
+ end
+
+
   # GET /adverts/1
   # GET /adverts/1.json
   def show
@@ -122,15 +130,15 @@ if !anyone_signed_in?
         @advert.base_demands=params[:base_demands]
        end
 
-
+    logger.info("session info" + @advert.logo.path)
     respond_to do |format|
-      if @advert.save
-        format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
-        format.json { render json: @advert, status: :created, location: @advert }
-      else
+     # if @advert.save
+      #  format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+        #format.json { render json: @advert, status: :created, location: @advert }
+     # else
         format.html { render action: "new" }
-        format.json { render json: @advert.errors, status: :unprocessable_entity }
-      end
+        format.json  
+     # end
     end
   end
 

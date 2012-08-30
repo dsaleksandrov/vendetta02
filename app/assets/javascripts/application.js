@@ -4,6 +4,70 @@ window.location = "/adverts/"+id;
 
 
   $(function() {
+
+
+ $('#show-preview-link').click(function(e) {
+
+ 
+    var url = $(this).attr('href');
+    var dialog_form = $('<div id="dialog-form">Loading form...</div>').dialog({
+      autoOpen: false,
+      width: 520,
+      modal: true,
+      open: function() {
+        return $(this).load(url + ' #preview-content');
+      },
+      close: function() {
+        $('#dialog-form').remove();
+      }
+    });
+    dialog_form.dialog('open');
+    e.preventDefault();
+  
+
+return false;
+
+  });
+
+
+
+
+ $('#new_advert').submit(function() {  
+    var valuesToSubmit = $(this).serialize();
+    $.ajax({
+        url: $(this).attr('action'), //sumbits it to the given url of the form
+        data: valuesToSubmit,
+        dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
+    }).success(function(json){
+ 
+    });
+    
+
+  var url = $(this).attr('href');
+    var dialog_form = $('<div id="dialog-form">Loading form...</div>').dialog({
+      autoOpen: false,
+      width: 520,
+      modal: true,
+      open: function() {
+        return $(this).load(url + ' #preview-content');
+      },
+      close: function() {
+        $('#dialog-form').remove();
+      }
+    });
+    dialog_form.dialog('open');
+    e.preventDefault();
+  
+
+    return false; // prevents normal behaviour
+
+    });
+
+
+ 
+
+
+
   
   $("#fulltime").change(function() {
     $.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
@@ -50,40 +114,7 @@ $("#town").keyup(function() {
  
 
   
-
-   $("#logo_upload").change(function() {
-     if ($("#logo_upload").val()!=null){
-    	alert("val = "+$("#logo_upload").val());
-    	var img = new Image();
-  
-  // wrap our new image in jQuery, then:
-	  $(img)
-    // once the image has loaded, execute this code
-    	.load(function () {
-      // set the image hidden by default    
-      		$(this).hide();
-    
-      // with the holding div #loader, apply:
-      $('#loader')
-        // remove the loading class (so no background spinner), 
-        .removeClass('loading')
-        // then insert our image
-        .append(this);
-    
-      // fade our image in to create a nice effect
-      $(this).fadeIn();
-    })
-    
-    // if there was an error loading the image, react accordingly
-    .error(function () {
-      // notify the user that the image could not be loaded
-    })
-    
-    // *finally*, set the src attribute of the new image to our image
-    .attr('src', $("#logo_upload").val());
-  }
-     return false;
-  });
+ 
  
   });
   

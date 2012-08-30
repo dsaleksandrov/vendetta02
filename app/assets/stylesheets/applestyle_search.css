@@ -1,4 +1,19 @@
- 
+.ui-widget {
+  background: white;
+}
+
+.ui-widget-overlay {
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+
+#dialog-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+} 
 .well{margin-top: 30px;border-color: #BCE8F1;}
 
 .alert-info{background-color:#F5F5F5}

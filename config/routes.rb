@@ -2,15 +2,25 @@ Vendetta02::Application.routes.draw do
 devise_for :users do
   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
 end
-
-  resources :adverts
-
+ 
   resources :companies
 
   resources :users
 
+  resources :adverts do
+     collection do
+    get 'preview'
+  end
+end
+
+
+
 
 root :to => "adverts#index"
+
+match '/adverts/preview', :controller => 'adverts', :action => 'preview', :as=>"preview_advert_path"
+match '/create', :controller => 'adverts', :action => 'create', :as=>"create_advert_path"
+
 
 
 
