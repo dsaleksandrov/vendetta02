@@ -81,8 +81,9 @@ end
 # GET /adverts/preview
 # GET /adverts/preview.json
 def preview
-    logger.info("1Preview page begin load1")
-
+  if(!params.has_key?(:advert)) 
+       redirect_to :action => "index"
+   else
     @advert = Advert.new(params[:advert])
     @advert.user=User.find(1);
       unless params[:employment_type].nil?
@@ -103,7 +104,7 @@ def preview
      # end
     end
 
-
+  end
   
  end
 

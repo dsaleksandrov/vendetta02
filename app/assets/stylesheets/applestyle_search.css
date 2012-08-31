@@ -1,6 +1,13 @@
- #text{margin-left: 15px;}
+input.error{
+    background: #f8dbdb;
+    border-color: #e77776;
+}
+
+ 
+
+  #text{margin-left: 15px;}
 #basedemands-content{background-color: white;margin-top: 5px;}  
-.well{margin-top: 30px;border-color: #BCE8F1;}
+.well{margin-top: 30px;border-color: #BCE8F1;background-color: white;}
 
 .alert-info{background-color:#F5F5F5}
 .hero-unit{padding: 0px;padding-left: 40px;padding-right: 23px; background:url("../images/pattern4.png") repeat scroll 0 0 transparent}
@@ -74,7 +81,16 @@ border-right:1px solid #EEEEEE;
 
 
 
-#mainformdiv{width:90%;margin-left:6%;}
+#mainformdiv{width:90%;
+    margin-left:6%;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px 4px 4px 4px;
+    
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    border: 1px solid #BCE8F1;
+}
 
 .container{width: 1024px;position: relative;}
 
