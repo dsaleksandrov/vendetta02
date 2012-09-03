@@ -174,21 +174,20 @@ a:hover {
   text-decoration: underline;
 }
 
- .row {
+.row {
   margin-left: -20px;
   *zoom: 1;
 }
 
 .row:before,
 .row:after {
-  position: relative;
-  /*display: table;*/
+  display: table;
   content: "";
 }
-/*
+
 .row:after {
-  clear: both;*/
-} 
+  clear: both;
+}
 
 [class*="span"] {
   float: left;
@@ -420,7 +419,6 @@ a:hover {
 .container-fluid:after {
   clear: both;
 }
-
 
 p {
   margin: 0 0 9px;

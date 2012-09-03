@@ -1,16 +1,49 @@
+.radio, .checkbox {
+    padding-left: 15px;
+}
+
+
+#text{color: black;font-size: 14px;}
+
+#emaildivlogo,#emaildivtext{margin-top: 10px;display:inline-block}
+#telefondivlogo{display:inline-block;}
+
+#emaildivlogo,#telefondivlogo,#telefondivcontent,
+#emaildivtext, #work_company_name_div,#basedemands-spalogo{font-size: 16px;}
+
+#work_company_name_div{margin-top: 6px;}
+
+#telefondivcontent{display: inline-block;}
+
+#site-link{font-size: 16px;}
+ 
 input.error{
     background: #f8dbdb;
     border-color: #e77776;
 }
 
+
+span.error{
+   border:  1px solid #D3D3D3;
+}
  
 
-  #text{margin-left: 15px;}
-#basedemands-content{background-color: white;margin-top: 5px;}  
+
+#basedemands-content{background-color: white;margin-top: 10px;}  
 .well{margin-top: 30px;border-color: #BCE8F1;background-color: white;}
 
-.alert-info{background-color:#F5F5F5}
-.hero-unit{padding: 0px;padding-left: 40px;padding-right: 23px; background:url("../images/pattern4.png") repeat scroll 0 0 transparent}
+.alert-info{background-color:#F5F5F5;}
+
+/*.hero-unit{padding: 0px;padding-left: 40px;padding-right: 23px;
+ background:url("../images/pattern4.png") repeat scroll 0 0 transparent}
+ */
+
+
+.hero-unit{padding: 0px;padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px;margin-left: 35px;}
+
+
+
+
 table{
 border-right:1px solid #EEEEEE;
  border-left:1px solid #EEEEEE;   
@@ -20,57 +53,10 @@ border-right:1px solid #EEEEEE;
  float:left;
 
 }
+ 
 
-.right-container{width: 100%;
-    float:left;
-    margin:0 0 0 100%;
-}
-
-.row-left{
-
-    float:left;
-    width:100%;
-    margin:0 0 0 -100%;
-}
-
-.row-right{
-    float: left;
-}
-
-.row{position: relative;float: left;}
-
-
-
-.span3{float: right;}
-.span3:after{
-     border: 1px solid #0000FF;
-    box-shadow: 0 0 5px #0000FF;
-    content: "";
-    display: block;
-    height: 100%;
-    left: 20px;
-    position: absolute;
-    top: 0;
-    width: 160px;
-    z-index: -1;
-
-}
-
-
-
-.span9{float: left;background-color: white;width: 740px;}
-
-.span9:after{    border: 1px solid #0000FF;
-    box-shadow: 0 0 5px #0000FF;
-    content: "";
-    display: block;
-    height: 100%;
-    left: 20px;
-    position: absolute;
-    top: 0;
-    width: 160px;
-    z-index: -1;}
-
+.span3{margin-top: 10px;}
+ 
 .header-adverts-div{background: url("../images/headeradverts.png") repeat scroll left top transparent}
 
 .aboutheader{margin-left: 10px;margin-top: 10px;}
@@ -101,13 +87,15 @@ border-right:1px solid #EEEEEE;
 
 #work_img_div{float: left;display: inline-block;}
 
-#work_towncountry_div{display: inline-block;margin-top: 10px;}
+#work_towncountry_div,#work_towncountry_div_preview{display: inline-block;margin-top: 10px;}
+
+#work_towncountry_div_preview{font-size: 16px;}
 
 #div_time_create{margin-top: 10px;}
 
 #work_town{display: inline-block;}
 
-#work_cat_div{display: inline-block;font-weight: bold;font-size: 17px;margin-bottom: 7px;}
+#work_cat_div{display: inline-block;font-weight: bold;font-size: 17px;margin-top: 5px;}
 
 .btn-info{width:150px;}
 

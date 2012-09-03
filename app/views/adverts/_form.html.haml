@@ -18,6 +18,10 @@
                   .controls
                     = f.text_field :work_category, :class =>"vacancy-field"
                 .control-group
+                  %label{:class=>"control-label"} Максимальная з/п (руб.)
+                  .controls
+                    = f.text_field :money, :class =>"vacancy-field"
+                .control-group
                   %label{:class => "control-label"} Тип занятости
                   .controls
                     %label{:class =>"radio"}
@@ -32,7 +36,7 @@
                     %label{:class =>"radio",:style=>"margin-top:10px;"}
                       %input{:id=>"workingType4",:type=>"radio",:value=>"forone",:name=>"employment_type"}
                       %span{:class=>"label"} Работа на один раз
-                .control-group#townfield
+                .control-group
                   %label{:class=>"control-label"} Город, страна
                   .controls
                     = f.text_field :town_country,:class =>"vacancy-field"
@@ -41,9 +45,17 @@
                   .controls
                     = f.text_field :Company,:class =>"vacancy-field"
                 .control-group
-                  %label{:class=>"control-label"} Сайт компании или email для связи
+                  %label{:class=>"control-label"} Сайт компании http://
+                  .controls
+                    = f.text_field :site,:class =>"vacancy-field"
+                .control-group
+                  %label{:class=>"control-label"} Email для связи
                   .controls
                     = f.text_field :email,:class =>"vacancy-field"
+                .control-group
+                  %label{:class=>"control-label"} Контактый телефон
+                  .controls
+                    = f.text_field :telefon,:class =>"vacancy-field"
                 .control-group
                   %label{:class=>"control-label"} Логотип компании
                   .controls
@@ -51,9 +63,17 @@
                 .control-group
                   %label{:class=>"control-label"} Описание вакансии, основные требования
                   .controls
-                    %textarea#aboutVacancy{:name => "base_demands"} &lt;p&gt;Initial value.&lt;/p&gt;
+                    %textarea#aboutVacancy{:name => "base_demands"}Напишите насколько можно максимально  подробно о вакансии, например:<br></p><p>В издательском доме <strong>"Рынок Электротехники"</strong> открыта вакантная должность <span class="b-highlighted">Менеджера</span> по продажам рекламных площадей (знание электротехники не нужно).<br></p><br><p><strong>Обязанности:</strong></p><ul><li>ведение переговоров с клиентами по&nbsp;вопросам &nbsp;размещения рекламы в журналах&nbsp;</li><li>продажа рекламы в специализированные журналы</li><li>работа с&nbsp; новой и уже существующей клиентской базой</li><li>клиентская база предоставляется</li><li>заключение договоров на размещение рекламы</li><li>выезды к клиентам на встречи и продажа по телефону</li><li>исходящие звонки потенциальным клиентам по предоставляемой клиентской базе</li><li>отслеживание оплат&nbsp;</li><li>ведение клиента</li><li>возможны командировки</li><li>участие во всех специализированных выставках и конференциях&nbsp;</li></ul><br><p><strong>Требования:</strong></p><ul><li>женщина 23-38лет</li><li>опыт работы в продажах не обязателен</li><li>обязателен опыт работы в Москве не менее 1 года</li><li>гражданство РФ</li></ul><br><p><b>Условия:</b></p><ul><li>работа в офисе</li><li>понедельник-пятница 9.00-18.00&nbsp;</li><li>м. Савеловская &nbsp;и м. Марьина Роща 15 минут пешком от метро</li><li>клиентская база предоставляется&nbsp;</li><li>молодой дружный коллектив</li><li>возможен карьерный рост</li><li>бесплатное профессиональное обучение<br></li><li>оформление по ТК РФ<br></li><li>компенсация питания<br></li></ul>
                     :javascript
                       CKEDITOR.replace( 'aboutVacancy' );
+                      var config = { extraPlugins: 'onchange'};
+                      CKEDITOR.on('aboutVacancy', function (e) {
+                      alert(1);
+                      e.editor.on('change', function () {
+                      alert(2);
+                      });
+                      });
+
             .actions{:style=>"float:right"}
               %input#show-preview-link{:value=>"Предосмотр",:class=>"btn btn-large btn-info",:type=>"submit"}
               %input#save-link{:value=>"Сохранить",:class=>"btn btn-large btn-primary",:type=>"submit"}

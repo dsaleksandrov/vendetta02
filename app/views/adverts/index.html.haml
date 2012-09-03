@@ -1,45 +1,44 @@
 .container
-  .left-container
-    .right-container
-      .row-left
-        = form_tag adverts_path, :method => :get, :id => "adverts_search", :remote => true do
-          %div{:id=>"mainformdiv"}
-            %hr
-            %div{:id=>"keyword",:style=>"display:inline-block;float:left"}
-              =text_field_tag :search,params[:search], :placeholder=>"Ключевое слово"
-            %div{:id=>"location",:style=>"display:inline-block;float:right"}
-              =text_field_tag :town,params[:town],:placeholder=>"Город"
+  .row
+    .span9
+      = form_tag adverts_path, :method => :get, :id => "adverts_search", :remote => true do
+        %div{:id=>"mainformdiv"}
+          %hr
+          %div{:id=>"keyword",:style=>"display:inline-block;float:left"}
+            =text_field_tag :search,params[:search], :placeholder=>"Ключевое слово"
+          %div{:id=>"location",:style=>"display:inline-block;float:right"}
+            =text_field_tag :town,params[:town],:placeholder=>"Город"
             
-            %div{:class=>"alert alert-info",:style=>"height:50px;display:inline-block;margin-top:10px;width:100%"}
-              .controls{:style=>"display:inline-block;margin-left:10px;"}
-                %label{:class =>"radio"}
-                  %input{:id=>"fulltime",:type=>"checkbox",:value=>"fulltime",:name=>"fulltime"}
-                  %span{:class=>"label label-info"} Полная занятость
-              .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
-                %label{:class =>"radio"}
-                  %input{:id=>"parttime",:type=>"checkbox",:value=>"parttime",:name=>"parttime"}
-                  %span{:class=>"label label-success"} Частичная занятость
-              .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
-                %label{:class =>"radio"}
-                  %input{:id=>"remote",:type=>"checkbox",:value=>"remote",:name=>"remote"}
-                  %span{:class=>"label label-warning"} Удаленная работа
-              .controls{:style=>"margin-top:10px;margin-left:3px;display:inline-block;"}
-                %label{:class =>"radio"}
-                  %input{:id=>"forone",:type=>"checkbox",:value=>"forone",:name=>"forone"}
-                  %span{:class=>"label"} Работа на один раз
-            %hr 
-        %div{:id => 'adverts'}
-          = render 'adverts'  
-      .row-right
-        %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}
-          .aboutheader Лучшая работа для студентов!
-          .aboutwork
-            %ul
-              %li Только лучшие вакансии!
-              %li Нет утомительной регистрации=)
-              %li Мы находим работу, которую вы ищите!
-              %li Мы делаем так, чтобы наш сайт посещали классные люди:)!
-              %li Мы работаем с душой=)
+          %div{:class=>"alert alert-info",:style=>"height:50px;display:inline-block;margin-top:10px;width:100%"}
+            .controls{:style=>"display:inline-block;"}
+              %label{:class =>"radio"}
+                %input{:id=>"fulltime",:type=>"checkbox",:value=>"fulltime",:name=>"fulltime"}
+                %span{:class=>"label label-info"} Полная занятость
+            .controls{:style=>"margin-top:10px;display:inline-block;"}
+              %label{:class =>"radio"}
+                %input{:id=>"parttime",:type=>"checkbox",:value=>"parttime",:name=>"parttime"}
+                %span{:class=>"label label-success"} Частичная занятость
+            .controls{:style=>"margin-top:10px;display:inline-block;"}
+              %label{:class =>"radio"}
+                %input{:id=>"remote",:type=>"checkbox",:value=>"remote",:name=>"remote"}
+                %span{:class=>"label label-warning"} Удаленная работа
+            .controls{:style=>"margin-top:10px;display:inline-block;"}
+              %label{:class =>"radio"}
+                %input{:id=>"forone",:type=>"checkbox",:value=>"forone",:name=>"forone"}
+                %span{:class=>"label"} Работа на один раз
+          %hr 
+      %div{:id => 'adverts'}
+        = render 'adverts'  
+    .span3
+      %div{:class=>"alert alert-info",:style=>"color:black;width:250px;"}
+        .aboutheader Лучшая работа для студентов!
+        .aboutwork
+          %ul
+            %li Только лучшие вакансии!
+            %li Нет утомительной регистрации=)
+            %li Мы находим работу, которую вы ищите!
+            %li Мы делаем так, чтобы наш сайт посещали классные люди:)!
+            %li Мы работаем с душой=)
 
 
 

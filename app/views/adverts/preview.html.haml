@@ -30,17 +30,31 @@
                         %span{:class=>"label label-warning"} Удаленная работа
                       -if @advert.employment_type == 'forone'
                         %span{:class=>"label"} Работа на один раз
+                    #div_time_create
+                      -if !@advert.site.nil? && !@advert.site.blank?
+                        %a{:href=>"#{@advert.site}",:id=>"site-link"} #{@advert.site}
                   %td
                     #work_town
                       #work_img_div
                         %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
-                      #work_towncountry_div
+                      #work_towncountry_div_preview
                         =@advert.town_country
+              -if !@advert.email.nil? && !@advert.email.blank?
+                %hr
+                #emaildivlogo 
+                  email:
+                #emaildivtext
+                  #{@advert.email}
+              %hr
+              #telefondivlogo
+                контактный телефон:
+              #telefondivcontent
+                #{@advert.telefon}
+              %hr
               #basedemands-view
-                Описание вакансии и требования:
                 #basedemands-content
-                  #text
-                    #{@advert.base_demands.html_safe}        
+                  %div{:class=>"alert alert-info",:id=>"text"}
+                    #{@advert.base_demands.html_safe}       
       .row-right
         %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}
           .aboutheader Лучшая работа для студентов!

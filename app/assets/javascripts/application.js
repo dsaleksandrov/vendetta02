@@ -7,11 +7,17 @@ window.location = "/adverts/"+id;
 
  
 
+CKEDITOR.on('instanceCreated', function (e) {
+alert(1);
+e.editor.on('change', function () {
+alert(2);
+});
+});
 
 
 
  $('#show-preview-link').click(function(e) {
-     validateFalse=true;
+ validateFalse=true;
     if (!validateInputField("advert_work_category")){
        validateFalse= false;
     }
@@ -23,15 +29,18 @@ window.location = "/adverts/"+id;
        validateFalse= false;
     }
 
-     if (!validateInputField("advert_email")){
+  
+
+       if (!validateInputField("advert_money")){
        validateFalse= false;
     }
 
-     if (!validateInputField("aboutVacancy")){
+   if (!validateInputField("advert_telefon")){
        validateFalse= false;
     }
 
 
+    
 
 
     if (!validateFalse){return false;}
@@ -51,6 +60,11 @@ return false;
 
 
 
+  
+
+
+
+
  function validateInputField(field_name){
    if( !$("#"+field_name).val() ) {
     $("#"+field_name).addClass("error");
@@ -62,6 +76,27 @@ return false;
     }
  }
 
+
+
+
+$("#advert_telefon").keyup(function() {
+      $("#advert_telefon").removeClass("error");
+     return false;
+  });
+$("#advert_telefon").click(function() {
+      $("#advert_telefonx").removeClass("error");
+     return false;
+})
+
+
+$("#advert_money").keyup(function() {
+      $("#advert_money").removeClass("error");
+     return false;
+  });
+$("#advert_money").click(function() {
+      $("#advert_money").removeClass("error");
+     return false;
+})
 
 
 $("#aboutVacancy").keyup(function() {

@@ -1,6 +1,7 @@
 class Advert < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :Company, :agent_name, :base_demands, :desc, :email, :employment_type, :icon, :instructions, :logo, :name, :site, :town_country, :work_category
+  attr_accessible :Company, :agent_name, :base_demands, :desc, :email, :employment_type, :icon, :instructions, :logo, :name, :site, :town_country, 
+  :work_category,:telefon,:money,:isModerated
   
   mount_uploader :logo, ImageUploader
   define_index do
