@@ -105,9 +105,31 @@ def preview
     end
 
   end
-  
+    
  end
 
+
+
+ def backtonew
+   logger.info("!!!!!!!!!!!!session info!!!!!!!!!!!!");
+ logger.info("session info!!!!!!!!!!!!" + params[:advert])
+ @advert = Advert.new (params[:advert])
+  logger.info("session info" + @advert.company)
+      logger.info("!!!!SSSSSSSSSSSSSSSSS!" + @advert.logo.path)
+
+    respond_to do |format|
+     # if @advert.save
+      #  format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+        #format.json { render json: @advert, status: :created, location: @advert }
+     # else
+        format.html { render action: "new" }
+        format.json  
+  
+     # end
+    end
+ end
+
+ 
 
   # GET /adverts/1
   # GET /adverts/1.json
@@ -123,6 +145,8 @@ def preview
   # GET /adverts/new
   # GET /adverts/new.json
   def new
+       logger.info("BLYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
 if !anyone_signed_in?
          deny_access
        else

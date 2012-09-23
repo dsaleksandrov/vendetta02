@@ -1,7 +1,17 @@
+.alert-info{color: black;}
 .radio, .checkbox {
     padding-left: 15px;
 }
 
+#preview-returnedit{width: 120px; clear:both;
+}
+
+#preview-save{width: 120px;clear:both;margin-top: 10px;margin-bottom: 10px;}
+
+#div_page_cotrols_container{padding: 15px;}
+#preview_page_controls{display:inline-block;}
+#div_page_text{display:inline-block;width: 70%}
+#div_page_buttons{display:inline-block;float: right;}
 
 #text{color: black;font-size: 14px;}
 

@@ -3,13 +3,13 @@ devise_for :users do
   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
 end
  
-  resources :companies
 
   resources :users
 
   resources :adverts do
      collection do
     get 'preview'
+    get 'backtonew'
   end
 end
 
@@ -19,6 +19,7 @@ end
 root :to => "adverts#index"
 
 match '/adverts/preview', :controller => 'adverts', :action => 'preview', :as=>"preview_advert_path"
+match '/adverts/backtonew', :controller => 'adverts', :action => 'backtonew', :as=>"backtonew"
 match '/create', :controller => 'adverts', :action => 'create', :as=>"create_advert_path"
 
 

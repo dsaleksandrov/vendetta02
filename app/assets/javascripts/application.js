@@ -5,49 +5,53 @@ window.location = "/adverts/"+id;
 
   $(function() {
 
- 
 
-CKEDITOR.on('instanceCreated', function (e) {
-alert(1);
-e.editor.on('change', function () {
-alert(2);
+
+  
+ $('#preview-returnedit').click(function(e) {
+  $("#preview_advert_form").attr("action", "/adverts/backtonew");
+  $("#preview_advert_form").submit();
+  return false;
 });
-});
+
+
+
 
 
 
  $('#show-preview-link').click(function(e) {
+
+ 
+
  validateFalse=true;
     if (!validateInputField("advert_work_category")){
        validateFalse= false;
-    }
+     }
     if (!validateInputField("advert_town_country")){
        validateFalse= false;
-    }
+     }
 
-    if (!validateInputField("advert_Company")){
+    if (!validateInputField("advert_company")){
        validateFalse= false;
-    }
+     }
 
   
 
        if (!validateInputField("advert_money")){
        validateFalse= false;
-    }
+     }
 
    if (!validateInputField("advert_telefon")){
        validateFalse= false;
-    }
+     }
 
 
-    
-
-
+ 
     if (!validateFalse){return false;}
 
-    $("#new_advert").attr("action", "/adverts/preview");
-    $("#new_advert").submit();
- return false;
+     $("#new_advert").attr("action", "/adverts/preview");
+     $("#new_advert").submit();
+  return false;
 });
 
 
@@ -56,8 +60,15 @@ $('#save-link').click(function(e) {
 return false;
 });
 
+/*
+$('#preview-returnedit').click(function(e) {
+history.go(-1);
+return false;
+});
 
 
+
+*/
 
 
   

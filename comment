@@ -1,0 +1,18 @@
+-mysql
+http://www.howtogeek.com/howto/ubuntu/install-mysql-server-5-on-ubuntu/	
+http://www.ithowto.ru/149-ustanovka-mysql-v-ubuntu.html
+ sudo apt-get install mysql-server libmysqlclient-dev
+
+
+sudo dpkg -i sphinxsearch_2.0.5-release-0ubuntu11~lucid2_amd64.deb
+
+http://packages.ubuntu.com/oneiric/amd64/libmysqlclient16/download
+
+
+
+rmagic
+http://superuser.com/questions/163818/how-to-install-rmagick-on-ubuntu-10-04
+
+dpkg -L sphinxsearch
+
+   ps -ef | grep searchd

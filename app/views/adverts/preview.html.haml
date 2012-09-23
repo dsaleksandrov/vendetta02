@@ -1,67 +1,82 @@
 .container
-  .left-container
-    .right-container
-      .row-left
-        .hero-unit#advertform
-          = form_for @advert,:action=>"/adverts/create", :html => { :class => 'form-horizontal' },:remote => true,:multipart => true  do |f|
-            -if @advert.errors.any?
-              #error_explanation
-                %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
-                %ul
-                  - @advert.errors.full_messages.each do |msg|
-                    %li= msg
-            .well
-              %table{:class =>'table'}
-                %tr
-                  %td
-                    %img{:src=>"#{@advert.logo}",:height=>"50",:width=>"80",:style=>"margin-left:10px;"}
-                  %td
-                    #work_cat_div
-                      =@advert.work_category
-                    #work_company_name_div
-                      =@advert.Company
-                  %td
-                    #div_work_type
-                      -if @advert.employment_type == 'fulltime'
-                        %span{:class=>"label label-info"} Полная занятость
-                      -if @advert.employment_type == 'parttime'
-                        %span{:class=>"label label-success"} Частичная занятость
-                      -if @advert.employment_type == 'remote'
-                        %span{:class=>"label label-warning"} Удаленная работа
-                      -if @advert.employment_type == 'forone'
-                        %span{:class=>"label"} Работа на один раз
-                    #div_time_create
-                      -if !@advert.site.nil? && !@advert.site.blank?
-                        %a{:href=>"#{@advert.site}",:id=>"site-link"} #{@advert.site}
-                  %td
-                    #work_town
-                      #work_img_div
-                        %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
-                      #work_towncountry_div_preview
-                        =@advert.town_country
-              -if !@advert.email.nil? && !@advert.email.blank?
-                %hr
-                #emaildivlogo 
-                  email:
-                #emaildivtext
-                  #{@advert.email}
-              %hr
-              #telefondivlogo
-                контактный телефон:
-              #telefondivcontent
-                #{@advert.telefon}
-              %hr
-              #basedemands-view
-                #basedemands-content
-                  %div{:class=>"alert alert-info",:id=>"text"}
-                    #{@advert.base_demands.html_safe}       
-      .row-right
-        %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}
-          .aboutheader Лучшая работа для студентов!
-          .aboutwork
+  .row
+    .span9
+      = form_for @advert,:action=>"/adverts/create", :html => { :class => 'form-horizontal',:id=>"preview_advert_form" }  do |f|
+        -if @advert.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
             %ul
-              %li Только лучшие вакансии!
-              %li Нет утомительной регистрации!=)
-              %li Мы находим работу, которую Вы ищите!
-              %li Наш сайт посещают молодые, амбициозные люди=)!
-              %li Работаем с душой=)
+              - @advert.errors.full_messages.each do |msg|
+                %li= msg
+        .well
+          %div{:class=>"alert alert-info",:id=>"preview_page_controls"}
+            #div_page_cotrols_container
+              #div_page_text
+                Нажмите "Сохранить", чтобы вакансия появилась на сайте. Чтобы вернуться в режим редактирования, нажмите "Редактировать".
+              #div_page_buttons
+                %input#preview-returnedit{:value=>"Редактировать",:class=>"btn btn-success"}
+                %br
+                %input#preview-save{:value=>"Сохранить",:class=>"btn btn-info"}
+
+          %table{:class =>'table'}
+            %tr
+              %td
+                %img{:src=>"#{@advert.logo}",:height=>"50",:width=>"80",:style=>"margin-left:10px;"}
+              %td
+                #work_cat_div
+                  =@advert.work_category
+                #work_company_name_div
+                  =@advert.company
+              %td
+                #div_work_type
+                  -if @advert.employment_type == 'fulltime'
+                    %span{:class=>"label label-info"} Полная занятость
+                  -if @advert.employment_type == 'parttime'
+                    %span{:class=>"label label-success"} Частичная занятость
+                  -if @advert.employment_type == 'remote'
+                    %span{:class=>"label label-warning"} Удаленная работа
+                  -if @advert.employment_type == 'forone'
+                    %span{:class=>"label"} Работа на один раз
+                #div_time_create
+                  -if !@advert.site.nil? && !@advert.site.blank?
+                    %a{:href=>"http://#{@advert.site}",:id=>"site-link",:target=>"_blank"} #{@advert.site}
+              %td
+                #work_town
+                  #work_img_div
+                    %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
+                  #work_towncountry_div_preview
+                    =@advert.town_country
+          -if !@advert.email.nil? && !@advert.email.blank?
+            %hr
+            #emaildivlogo 
+              email:
+            #emaildivtext
+              #{@advert.email}
+          %hr
+          #telefondivlogo
+            контактный телефон:
+          #telefondivcontent
+            #{@advert.telefon}
+          %hr
+          #basedemands-view
+            #basedemands-content
+              %div{:class=>"alert alert-info",:id=>"text"}
+                #{@advert.base_demands.html_safe}
+          =f.hidden_field :base_demands, :value => @advert.base_demands.html_safe
+          =f.hidden_field :logo, :value => @advert.logo
+          =f.hidden_field :work_category, {:value => '#{@advert.work_category}'}
+          =f.hidden_field :company, {:value => '#{@advert.company}'}
+          =f.hidden_field :site, {:value => '#{@advert.site}'}
+          =f.hidden_field :town_country, {:value => '#{@advert.town_country}'}
+          =f.hidden_field :employment_type, {:value => '#{@advert.employment_type}'}
+          =f.hidden_field :telefon, {:value => '#{@advert.telefon}'}
+    .span3
+      %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}
+        .aboutheader Лучшая работа для студентов!
+        .aboutwork
+          %ul
+            %li Только лучшие вакансии!
+            %li Нет утомительной регистрации!=)
+            %li Мы находим работу, которую Вы ищите!
+            %li Наш сайт посещают молодые, амбициозные люди=)!
+            %li Работаем с душой=)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901200449) do
+ActiveRecord::Schema.define(:version => 20120801140526) do
 
   create_table "adverts", :force => true do |t|
     t.string   "email"
@@ -20,24 +20,10 @@ ActiveRecord::Schema.define(:version => 20120901200449) do
     t.string   "work_category"
     t.text     "base_demands"
     t.text     "instructions"
-    t.string   "Company"
-    t.string   "name"
-    t.text     "desc"
-    t.string   "site"
-    t.string   "logo"
-    t.binary   "icon"
-    t.string   "agent_name"
-    t.integer  "user_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "company"
     t.string   "money"
     t.boolean  "isModerated"
     t.string   "telefon"
-  end
-
-  add_index "adverts", ["user_id"], :name => "index_adverts_on_user_id"
-
-  create_table "companies", :force => true do |t|
     t.string   "name"
     t.text     "desc"
     t.string   "site"
@@ -45,9 +31,11 @@ ActiveRecord::Schema.define(:version => 20120901200449) do
     t.binary   "icon"
     t.string   "agent_name"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  add_index "adverts", ["user_id"], :name => "index_adverts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
