@@ -55,17 +55,17 @@ end
 town=  params[:town]
  if !town.nil? && !town.blank?
       if condition.nil?
-        @adverts = Advert.search params[:search], :conditions => {:town_country => params[:town]}
+        @adverts = Advert.search params[:search],:order => :created_at, :sort_mode => :desc, :conditions => {:town_country => params[:town]}
       else
-        @adverts = Advert.search params[:search], :conditions => {:town_country => params[:town],:employment_type=>condition}
+        @adverts = Advert.search params[:search],:order => :created_at,:sort_mode => :desc, :conditions => {:town_country => params[:town],:employment_type=>condition}
       end
      
 
  else
    if condition.nil?      
-    @adverts = Advert.search params[:search]
+    @adverts = Advert.search params[:search],:order => :created_at, :sort_mode => :desc
   else
-    @adverts = Advert.search params[:search], :conditions => {:employment_type=>condition}
+    @adverts = Advert.search params[:search],:order => :created_at, :sort_mode => :desc,  :conditions => {:employment_type=>condition}
   end
 end
 

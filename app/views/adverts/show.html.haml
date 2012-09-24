@@ -16,7 +16,10 @@
           %table{:class =>'table',:id=>"show_table"}
             %tr
               %td
-                %img{:src=>"#{@advert.logo}",:height=>"50",:width=>"80",:style=>"margin-left:10px;margin-top:5px;"}
+                -if !@advert.icon.nil? && !@advert.icon.blank?
+                  %img{:src=>"#{@advert.icon}",:height=>"50",:width=>"80",:style=>"margin-top:10px;margin-left:10px;"}
+                -else
+                  %img{:src=>"../images/work2.png",:height=>"20",:width=>"30",:style=>"margin-top:10px;margin-left:10px;"}
               %td
                 #work_cat_div
                   =@advert.work_category
