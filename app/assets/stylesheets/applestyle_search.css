@@ -1,12 +1,21 @@
+#vk_like{padding-left:  5px;padding-top: 10px;padding-bottom: 10px;}
+
+#div_page_buttons_moderation4{margin-left: 20px;}
+#div_page_text_moderation1{padding: 10px;}
+#div_page_text_moderation2{padding: 10px;font-weight: bold;}
+#div_page_text_moderation3{padding: 10px;}
+#headtable{float: left;}
+
+#back_link{padding: 7px;margin-bottom: 10px;}
+#money_div_content{font-weight: bold}
 .alert-info{color: black;}
 .radio, .checkbox {
     padding-left: 15px;
 }
 
-#preview-returnedit{width: 120px; clear:both;
-}
+#preview-returnedit{width: 120px; clear:both;}
 
-#preview-save{width: 120px;clear:both;margin-top: 10px;margin-bottom: 10px;}
+#preview-save{width: 143px;clear:both;margin-top: 10px;margin-bottom: 10px;}
 
 #div_page_cotrols_container{padding: 15px;}
 #preview_page_controls{display:inline-block;}
@@ -18,12 +27,12 @@
 #emaildivlogo,#emaildivtext{margin-top: 10px;display:inline-block}
 #telefondivlogo{display:inline-block;}
 
-#emaildivlogo,#telefondivlogo,#telefondivcontent,
-#emaildivtext, #work_company_name_div,#basedemands-spalogo{font-size: 16px;}
+#div_page_text_moderation1,#div_page_text_moderation2,#div_page_text_moderation3,#money_div_content,#money_div_logo,#emaildivlogo,#telefondivlogo,#telefondivcontent,
+#money_div_content,#money_div_logo,#emaildivtext, #work_company_name_div,#basedemands-spalogo{font-size: 16px;}
 
 #work_company_name_div{margin-top: 6px;}
 
-#telefondivcontent{display: inline-block;}
+#money_div_content,#money_div_logo,#telefondivcontent{display: inline-block;}
 
 #site-link{font-size: 16px;}
  
@@ -49,7 +58,7 @@ span.error{
  */
 
 
-.hero-unit{padding: 0px;padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px;margin-left: 35px;}
+.hero-unit{padding: 10px;}
 
 
 
@@ -65,7 +74,7 @@ border-right:1px solid #EEEEEE;
 }
  
 
-.span3{margin-top: 10px;}
+.span3{margin-top: 0px;}
  
 .header-adverts-div{background: url("../images/headeradverts.png") repeat scroll left top transparent}
 
@@ -77,9 +86,8 @@ border-right:1px solid #EEEEEE;
 
 
 
-#mainformdiv{width:90%;
-    margin-left:6%;
-    background-color: white;
+#mainformdiv{ 
+     background-color: white;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 4px 4px 4px 4px;
@@ -137,7 +145,7 @@ border-right:1px solid #EEEEEE;
     background: url(../images/up1.png) no-repeat 10px 6px #fcfcfc;
     }
     body{background: url(../images/pattern4.png) repeat scroll 0 0 #F4F4F4}
-    #adverts_search {margin-top: 10px; }
+    #adverts_search {margin-top: 0px; }
 #search {
     background: url(../images/search-white.png) no-repeat 10px 15px #fcfcfc;
     border: 1px solid #d1d1d1;
@@ -153,7 +161,7 @@ border-right:1px solid #EEEEEE;
     background: url(../images/search-white.png) no-repeat 10px 15px #fcfcfc;
     border: 1px solid #d1d1d1;
     width: 170px;
-    padding: 10px 80px 6px 35px;
+    padding: 10px 100px 6px 35px;
     height: 30px;
      font-size: 20px;
    }
@@ -167,7 +175,7 @@ border-right:1px solid #EEEEEE;
 #advert_work_category{size:300;height: 30px;width: 250px;}
 
 #header{ margin: 0 auto;
-    width: 920px;
+    width: 1024px;
 
 }
 
@@ -177,7 +185,7 @@ border-right:1px solid #EEEEEE;
     vertical-align: top;
 }
 
-#addVacansyButton{float: right;}
+#addVacansyButton{float: right;margin-right: 50px;}
 
 #menu {
 

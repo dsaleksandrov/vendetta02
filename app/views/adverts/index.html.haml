@@ -35,11 +35,17 @@
         .aboutwork
           %ul
             %li Только лучшие вакансии!
-            %li Нет утомительной регистрации=)
-            %li Мы находим работу, которую вы ищите!
-            %li Мы делаем так, чтобы наш сайт посещали классные люди:)!
-            %li Мы работаем с душой=)
-
+            %li Нет утомительной регистрации!=)
+            %li Мы находим работу, которую Вы ищите!
+            %li Наш сайт посещают молодые, амбициозные люди=)!
+            
+          %script{:src => "http://userapi.com/js/api/openapi.js?52", :type => "text/javascript"}
+          :javascript
+            VK.init({apiId: 3067813, onlyWidgets: true});
+          / Put this div tag to the place, where the Like block will be
+        #vk_like
+        :javascript
+          VK.Widgets.Like("vk_like", {type: "button"});
 
 
 

@@ -54,12 +54,7 @@ window.location = "/adverts/"+id;
   return false;
 });
 
-
-
-$('#save-link').click(function(e) {
-return false;
-});
-
+ 
 /*
 $('#preview-returnedit').click(function(e) {
 history.go(-1);

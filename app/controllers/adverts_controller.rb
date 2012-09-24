@@ -77,6 +77,12 @@ end
  end
 
 
+def moderation
+@advert = Advert.find(params[:id])
+end
+
+
+
 
 # GET /adverts/preview
 # GET /adverts/preview.json
@@ -111,18 +117,13 @@ def preview
 
 
  def backtonew
-   logger.info("!!!!!!!!!!!!session info!!!!!!!!!!!!");
- logger.info("session info!!!!!!!!!!!!" + params[:advert])
- @advert = Advert.new (params[:advert])
-  logger.info("session info" + @advert.company)
-      logger.info("!!!!SSSSSSSSSSSSSSSSS!" + @advert.logo.path)
-
-    respond_to do |format|
+  @advert = Advert.new (params[:advert])
+   respond_to do |format|
      # if @advert.save
       #  format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
         #format.json { render json: @advert, status: :created, location: @advert }
      # else
-        format.html { render action: "new" }
+        format.html { render  "new" }
         format.json  
   
      # end
@@ -145,7 +146,6 @@ def preview
   # GET /adverts/new
   # GET /adverts/new.json
   def new
-       logger.info("BLYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
 if !anyone_signed_in?
          deny_access
@@ -170,6 +170,10 @@ if !anyone_signed_in?
  
     @advert = Advert.new(params[:advert])
     @advert.user=User.find(1);
+
+  
+
+ 
       unless params[:employment_type].nil?
         @advert.employment_type=params[:employment_type]
        end
@@ -177,15 +181,17 @@ if !anyone_signed_in?
         @advert.base_demands=params[:base_demands]
        end
 
-    logger.info("session info" + @advert.logo.path)
     respond_to do |format|
-     # if @advert.save
-      #  format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
-        #format.json { render json: @advert, status: :created, location: @advert }
-     # else
-        format.html { render action: "new" }
+      if @advert.save
+          if !@advert.logo.nil? && !@advert.logo.path.nil?
+          @advert.icon=@advert.logo.url
+          @advert.save
+          end
+        format.html { render action: "moderation" }
+      else
+        format.html { render "new" }
         format.json  
-     # end
+      end
     end
   end
 

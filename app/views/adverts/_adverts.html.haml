@@ -3,12 +3,16 @@
     - @adverts.each do |advert|
       %tr{:onclick=>"onClickTableCell(#{advert.id}); return false"}
         %td
-          %img{:src=>"../images/work2.png",:height=>"20",:width=>"30",:style=>"margin-top:10px;margin-left:10px;"}         
+          -if !advert.icon.nil? && !advert.icon.blank?
+            %img{:src=>"#{advert.icon}",:height=>"50",:width=>"80",:style=>"margin-top:10px;margin-left:10px;"}
+          -else
+            %img{:src=>"../images/work2.png",:height=>"20",:width=>"30",:style=>"margin-top:10px;margin-left:10px;"}
+
         %td
           #work_cat_div
             = advert.work_category
           #work_company_name_div
-            =advert.Company
+            =advert.company
         %td
           #div_work_type
             -if advert.employment_type == 'fulltime'
@@ -27,11 +31,5 @@
               %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
             #work_towncountry_div
               =advert.town_country
-
-      
-      
-      
-= will_paginate @adverts
-
 
 

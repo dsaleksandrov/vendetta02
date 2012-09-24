@@ -1,0 +1,33 @@
+.container
+  .row
+    .span9
+      = form_for @advert,:action=>"/adverts/moderation", :html => { :class => 'form-horizontal',:id=>"preview_advert_form" }  do |f|
+        -if @advert.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@advert.errors.count, "error")} prohibited this advert from being saved:"
+            %ul
+              - @advert.errors.full_messages.each do |msg|
+                %li= msg
+        .well
+          %div{:class=>"alert alert-info",:id=>"preview_page_controls"}
+            #div_page_cotrols_container
+              #div_page_text_moderation1
+                Вакансия была успешна сохранена и была отослана на модерацию.
+              #div_page_text_moderation2
+                Запомните, ID вашей вакансии: #{@advert.id}.
+              #div_page_text_moderation3
+                Если вакансия была корректно заполненна, то она будет скоро опубликованна на сайте. В случае проблемы публикации вакансии обращайтесь на email, с указанием ID вакансии: dprojectss@gmail.com
+            #div_page_buttons_moderation4
+              = link_to 'На главную страницу', adverts_path,:class=>"btn btn-success",:id=>"back_link"
+           
+
+
+    .span3
+      %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}
+        .aboutheader Лучшая работа для студентов!
+        .aboutwork
+          %ul
+            %li Только лучшие вакансии!
+            %li Нет утомительной регистрации!=)
+            %li Мы находим работу, которую Вы ищите!
+            %li Наш сайт посещают молодые, амбициозные люди=)!

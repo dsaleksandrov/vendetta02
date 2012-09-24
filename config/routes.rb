@@ -19,6 +19,7 @@ end
 root :to => "adverts#index"
 
 match '/adverts/preview', :controller => 'adverts', :action => 'preview', :as=>"preview_advert_path"
+match '/adverts/moderation', :controller => 'adverts', :action => 'moderation', :as=>"moderation"
 match '/adverts/backtonew', :controller => 'adverts', :action => 'backtonew', :as=>"backtonew"
 match '/create', :controller => 'adverts', :action => 'create', :as=>"create_advert_path"
 

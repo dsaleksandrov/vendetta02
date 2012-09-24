@@ -16,7 +16,7 @@
               #div_page_buttons
                 %input#preview-returnedit{:value=>"Редактировать",:class=>"btn btn-success"}
                 %br
-                %input#preview-save{:value=>"Сохранить",:class=>"btn btn-info"}
+                %input#preview-save{:value=>"Сохранить",:class=>"btn btn-info",:type=>"submit"}
 
           %table{:class =>'table'}
             %tr
@@ -46,6 +46,11 @@
                     %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
                   #work_towncountry_div_preview
                     =@advert.town_country
+          %hr
+          #money_div_logo
+            Макимальная з/п в рублях:
+          #money_div_content
+            #{@advert.money}
           -if !@advert.email.nil? && !@advert.email.blank?
             %hr
             #emaildivlogo 
@@ -62,14 +67,18 @@
             #basedemands-content
               %div{:class=>"alert alert-info",:id=>"text"}
                 #{@advert.base_demands.html_safe}
-          =f.hidden_field :base_demands, :value => @advert.base_demands.html_safe
-          =f.hidden_field :logo, :value => @advert.logo
-          =f.hidden_field :work_category, {:value => '#{@advert.work_category}'}
-          =f.hidden_field :company, {:value => '#{@advert.company}'}
-          =f.hidden_field :site, {:value => '#{@advert.site}'}
-          =f.hidden_field :town_country, {:value => '#{@advert.town_country}'}
-          =f.hidden_field :employment_type, {:value => '#{@advert.employment_type}'}
-          =f.hidden_field :telefon, {:value => '#{@advert.telefon}'}
+          =f.hidden_field :base_demands, :value => @advert.base_demands
+          =f.hidden_field :icon, :value => @advert.logo
+          =f.hidden_field :work_category, :value => @advert.work_category
+          =f.hidden_field :company, :value => @advert.company
+          =f.hidden_field :site, :value => @advert.site
+          =f.hidden_field :town_country, :value => @advert.town_country
+          =f.hidden_field :employment_type, :value => @advert.employment_type
+          =f.hidden_field :telefon,:value => @advert.telefon
+          =f.hidden_field :email,:value => @advert.email
+          =f.hidden_field :money,:value => @advert.money
+
+
     .span3
       %div{:class=>"alert alert-info",:style=>"margin-top:30px;color:black;width:250px;"}
         .aboutheader Лучшая работа для студентов!
@@ -79,4 +88,3 @@
             %li Нет утомительной регистрации!=)
             %li Мы находим работу, которую Вы ищите!
             %li Наш сайт посещают молодые, амбициозные люди=)!
-            %li Работаем с душой=)

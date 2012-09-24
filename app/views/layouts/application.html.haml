@@ -1,5 +1,6 @@
 !!!
 %html
+  %title Likes Work! Лучшая работа для студентов!
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %link{:rel=>"shortcut icon",:href=>"../images/up.png  ",:type=>"image/x-icon"}
@@ -13,10 +14,10 @@
     = csrf_meta_tag
   %body
   #header
-    %table{:width=>"100%"}
+    %table{:width=>"100%",:id=>"headtable"}
       %tr
         %td
-          %table
+          %table 
             %tr
               %td
                 %p{:style=>"font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;font-size:50px;margin-right:20px;"}
