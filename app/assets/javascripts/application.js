@@ -41,9 +41,7 @@ window.location = "/adverts/"+id;
        validateFalse= false;
      }
 
-   if (!validateInputField("advert_telefon")){
-       validateFalse= false;
-     }
+  
 
 
  
@@ -51,6 +49,39 @@ window.location = "/adverts/"+id;
 
      $("#new_advert").attr("action", "/adverts/preview");
      $("#new_advert").submit();
+  return false;
+});
+
+
+ $('#save-link').click(function(e) {
+
+ 
+
+ validateFalse=true;
+    if (!validateInputField("advert_work_category")){
+       validateFalse= false;
+     }
+    if (!validateInputField("advert_town_country")){
+       validateFalse= false;
+     }
+
+    if (!validateInputField("advert_company")){
+       validateFalse= false;
+     }
+
+  
+
+       if (!validateInputField("advert_money")){
+       validateFalse= false;
+     }
+
+   
+
+
+ 
+    if (!validateFalse){return false;}
+
+      $("#new_advert").submit();
   return false;
 });
 

@@ -147,15 +147,13 @@ def preview
   # GET /adverts/new.json
   def new
 
-if !anyone_signed_in?
-         deny_access
-       else
+ 
     @advert = Advert.new
 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @advert }
-    end
+   
   end
   end
 
