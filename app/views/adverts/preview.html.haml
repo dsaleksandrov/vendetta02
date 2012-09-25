@@ -57,12 +57,13 @@
               email:
             #emaildivtext
               #{@advert.email}
-          %hr
-          #telefondivlogo
-            контактный телефон:
-          #telefondivcontent
-            #{@advert.telefon}
-          %hr
+            %hr
+          -if !@advert.telefon.nil? && !@advert.telefon.blank?
+            #telefondivlogo
+              контактный телефон:
+            #telefondivcontent
+              #{@advert.telefon}
+            %hr
           #basedemands-view
             #basedemands-content
               %div{:class=>"alert alert-info",:id=>"text"}

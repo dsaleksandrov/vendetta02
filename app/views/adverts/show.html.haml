@@ -46,7 +46,7 @@
                     =@advert.town_country
           %hr
           #money_div_logo
-            Макимальная з/п в рублях:
+            Максимальная з/п в рублях:
           #money_div_content
             #{@advert.money}
           -if !@advert.email.nil? && !@advert.email.blank?
@@ -55,12 +55,14 @@
               email:
             #emaildivtext
               #{@advert.email}
-          %hr
-          #telefondivlogo
-            контактный телефон:
-          #telefondivcontent
-            #{@advert.telefon}
-          %hr
+            %hr
+          -if !@advert.telefon.nil? && !@advert.telefon.blank?
+            %hr
+            #telefondivlogo
+              контактный телефон:
+            #telefondivcontent
+              #{@advert.telefon}
+            %hr
           #basedemands-view
             #basedemands-content
               %div{:class=>"alert alert-info",:id=>"text"}
