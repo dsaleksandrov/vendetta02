@@ -1,5 +1,5 @@
 .hero-unit
-  %table{:class =>'table table-striped stacked'}
+  %table{:class =>'table table-striped stacked',:id=>"adtable"}
     - @adverts.each do |advert|
       %tr{:onclick=>"onClickTableCell(#{advert.id}); return false"}
         %td

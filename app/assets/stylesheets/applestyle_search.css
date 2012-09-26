@@ -1,3 +1,8 @@
+#adtable{width: 100%}
+.table th, .table td {
+padding: 5px;
+}
+
 #image_div{display:inline-block;}
 #link_div{display:inline-block;margin-left: 405px;}
 #lw_div{display:inline-block;font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;
@@ -128,7 +133,7 @@ border-right:1px solid #EEEEEE;
 
 #work_town{display: inline-block;}
 
-#work_cat_div{display: inline-block;font-weight: bold;font-size: 15px;margin-top: 5px;}
+#work_cat_div{display: inline-block;font-weight: bold;font-size: 0.875emp;margin-top: 5px;}
 
 .btn-info{width:150px;}
 
