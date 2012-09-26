@@ -1,9 +1,12 @@
+#image_div{display:inline-block;}
+#link_div{display:inline-block;margin-left: 405px;}
+#lw_div{display:inline-block;font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;
+font-size:40px;margin-right:10px;margin-top: 20px;}
 
 form{margin-bottom: 5px;}
-#header{float: right;
-    margin-right: 240px;
-    padding-bottom: 15px;
-    width: 68%;}
+#header{margin-left: auto;margin-right: auto;display: table; 
+     padding-bottom: 15px;
+    width:940px}
 
 .span9{width:690px;padding: 0;}
 .span3{width:100px;}

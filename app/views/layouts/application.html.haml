@@ -34,20 +34,13 @@
     %div
       %img{:alt => "", :src => "//mc.yandex.ru/watch/17287102", :style => "position:absolute; left:-9999px;"}
   #header
-    %table{:width=>"100%",:id=>"headtable"}
-      %tr
-        %td
-          %table 
-            %tr
-              %td
-                %p{:style=>"font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;font-size:40px;margin-right:20px;"}
-                  Likes
-                  %span{:color=>"red"}
-                    Work!
-              %td 
-                %img{:src=>"../images/up1.png",:height=>"65",:width=>"75"}
-        %td
-          = link_to 'Добавить вакансию', new_advert_path,:class=>"btn btn-info",:id=>"addVacansyButton"
+    #lw_div
+      Likes Work!
+    #image_div
+      %img{:src=>"../images/up1.png",:height=>"65",:width=>"75"}
+    #link_div
+      = link_to 'Добавить вакансию', new_advert_path,:class=>"btn btn-info",:id=>"addVacansyButton"
+
   = yield
   #bottom
     #aboutdiv
