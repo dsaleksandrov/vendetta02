@@ -4,9 +4,9 @@ padding: 5px;
 }
 
 #image_div{display:inline-block;}
-#link_div{display:inline-block;margin-left: 405px;}
+#link_div{display:inline-block;float: right; margin-right: 55px;padding-top: 20px;}
 #lw_div{display:inline-block;font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;
-font-size:40px;margin-right:10px;margin-top: 20px;}
+font-size:30px;margin-right:10px;margin-top: 20px;}
 
 form{margin-bottom: 5px;}
 #header{margin-left: auto;margin-right: auto;display: table; 
@@ -41,7 +41,7 @@ form{margin-bottom: 5px;}
 #div_page_text{display:inline-block;width: 70%}
 #div_page_buttons{display:inline-block;float: right;}
 
-#text{color: black;font-size: 14px;}
+#text{color: black;font-size: 14px;padding: 15px;}
 
 #emaildivlogo,#emaildivtext{margin-top: 10px;display:inline-block}
 #telefondivlogo{display:inline-block;}
@@ -172,7 +172,7 @@ border-right:1px solid #EEEEEE;
      width: 230px;
      height: 20px;
      font-size: 14px;
-    padding: 10px 50px 6px 35px;
+    padding: 10px 100px 6px 35px;
    }
  
 
@@ -198,7 +198,7 @@ border-right:1px solid #EEEEEE;
 
  
 
-#addVacansyButton{float: right;margin-right: 50px; height: 20px;}
+#addVacansyButton{ height: 20px;}
 
 #menu {
 
