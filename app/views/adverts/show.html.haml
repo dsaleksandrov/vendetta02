@@ -13,20 +13,21 @@
             #div_page_cotrols_container
               #div_page_buttons
                 = link_to 'Вернуться на главную страницу', root_path,:class=>"btn btn-success",:id=>"back_link"
-          %table{:class =>'table',:id=>"show_table"}
-            %tr
-              %td
+          %hr
+          .view_advert_table_div
+            .view_advert_cell_div
+              .advert_icon_cell_div
                 -if !@advert.icon.nil? && !@advert.icon.blank?
-                  %img{:src=>"#{@advert.icon}",:height=>"50",:width=>"80",:style=>"margin-top:10px;margin-left:10px;"}
+                  %img{:src=>"#{@advert.icon}",:class=>"advert_cell_img"}
                 -else
-                  %img{:src=>"../images/work2.png",:height=>"20",:width=>"30",:style=>"margin-top:10px;margin-left:10px;"}
-              %td
-                #work_cat_div
-                  =@advert.work_category
-                #work_company_name_div
-                  =@advert.company
-              %td
-                #div_work_type
+                  %img{:src=>"../images/work2.png"}
+              .advert_town_cell_div
+                .work_img_div
+                  %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
+                .work_towncountry_div
+                  =@advert.town_country
+              .advert_worktype_timecr_cell_div
+                .div_work_type
                   -if @advert.employment_type == 'fulltime'
                     %span{:class=>"label label-info"} Полная занятость
                   -if @advert.employment_type == 'parttime'
@@ -35,15 +36,14 @@
                     %span{:class=>"label label-warning"} Удаленная работа
                   -if @advert.employment_type == 'forone'
                     %span{:class=>"label"} Работа на один раз
-                #div_time_create
+                .div_time_create
                   -if !@advert.site.nil? && !@advert.site.blank?
                     %a{:href=>"http://#{@advert.site}",:id=>"site-link",:target=>"_blank"} #{@advert.site}
-              %td
-                #work_town
-                  #work_img_div
-                    %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
-                  #work_towncountry_div_preview
-                    =@advert.town_country
+              .advert_cat_company_cell_div
+                .work_cat_div
+                  =@advert.work_category
+                .work_company_name_div
+                  =@advert.company
           %hr
           #money_div_logo
             Максимальная з/п в рублях:

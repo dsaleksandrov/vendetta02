@@ -4,4 +4,8 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+
+
+
+
 Vendetta02::Application.load_tasks
