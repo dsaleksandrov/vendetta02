@@ -6,6 +6,7 @@ window.location = "/adverts/"+id;
   $(function() {
 
 
+ 
 
   
  $('#preview-returnedit').click(function(e) {

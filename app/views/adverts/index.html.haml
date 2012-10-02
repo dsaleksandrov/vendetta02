@@ -9,7 +9,7 @@
           %div{:id=>"location",:style=>"display:inline-block;float:right"}
             =text_field_tag :town,params[:town],:placeholder=>"Город"
             
-          %div{:class=>"alert alert-info",:style=>"height:50px;display:inline-block;margin-top:10px;width:100%"}
+          #filter_div{:class=>"alert alert-info"}
             .controls{:style=>"display:inline-block;"}
               %label{:class =>"radio"}
                 %input{:id=>"fulltime",:type=>"checkbox",:value=>"fulltime",:name=>"fulltime"}
