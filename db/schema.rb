@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924164836) do
+ActiveRecord::Schema.define(:version => 20121011120112) do
 
   create_table "adverts", :force => true do |t|
     t.string   "email"
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(:version => 20120924164836) do
     t.string   "icon"
     t.string   "agent_name"
     t.integer  "user_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "delta",           :default => true, :null => false
   end
 
   add_index "adverts", ["user_id"], :name => "index_adverts_on_user_id"

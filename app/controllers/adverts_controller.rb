@@ -91,7 +91,7 @@ def preview
        redirect_to :action => "index"
    else
     @advert = Advert.new(params[:advert])
-    @advert.user=User.find(1);
+    #@advert.user=User.find(1);
       unless params[:employment_type].nil?
         @advert.employment_type=params[:employment_type]
        end
@@ -167,7 +167,7 @@ def preview
   def create
  
     @advert = Advert.new(params[:advert])
-    @advert.user=User.find(1);
+    #@advert.user=User.find(1);
 
   
 
