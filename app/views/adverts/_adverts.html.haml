@@ -16,11 +16,11 @@
         .advert_worktype_timecr_cell_div
           .div_work_type
             -if advert.employment_type == 'fulltime'
-              %span{:class=>"label label-info"} Полная занятость
+              %span{:class=>"label label-info",:style=>"padding-left:10px;padding-right:10px;"} Полная занятость
             -if advert.employment_type == 'parttime'
-              %span{:class=>"label label-success"} Частичная занятость
+              %span{:class=>"label label-success",:style=>"padding-left:10px;padding-right:10px;"} Частичная занятость
             -if advert.employment_type == 'remote'
-              %span{:class=>"label label-warning"} Удаленная работа
+              %span{:class=>"label label-warning",:style=>"padding-left:8px;padding-right:8px;"} Удаленная работа
             -if advert.employment_type == 'forone'
               %span{:class=>"label"} Работа на один раз
           .div_time_create

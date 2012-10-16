@@ -2,6 +2,15 @@
     max-width: 32px;
     vertical-align: middle;} 
 
+
+
+.view_advert_cell_img{max-height: 60px;
+    max-width: 60px;
+    vertical-align: middle;} 
+
+
+
+
 .advert_cell_div {
  
 -moz-transition: color 0.2s 0.02s ease;
@@ -25,17 +34,50 @@
     position: relative;width: 100%;
     cursor: pointer;
 }
+
+.view_advert_cell_div{border-top: 1px solid #E2E2E2;
+    clear: left;
+    color: #4C4C4C;
+    display: block;
+    min-height: 4.5em;
+    overflow: hidden;
+    position: relative;width: 100%;
+    cursor: pointer;
+}
+
+
 .advert_icon_cell_div{ float: left;
     height: 4.5em;
     line-height: 4.5em;
     padding: 0 10px; }
 
+    .view_advert_icon_cell_div{ float: left;
+    height: 4.5em;
+    line-height: 4.5em;
+    padding: 0 10px; }
+
+.view_advert_icon_cell_div{ float: left;
+    height: 4.5em;
+    line-height: 4.5em;
+    padding: 0 10px; }    
+
 
 .advert_town_cell_div{float: right;}
+.view_advert_town_cell_div{float: right;}
+
+.view_advert_town_cell_div{float: right;}
+
 .advert_worktype_timecr_cell_div{float: right;padding-top: 10px;}
+.view_advert_worktype_timecr_cell_div{float: right;padding-top: 10px;}
+
+.view_advert_worktype_timecr_cell_div{float: right;padding-top: 15px;}
 
 
-.work_company_name_div{display: block;} 
+
+.work_company_name_div{display: block;}
+.view_work_company_name_div{display: block;}
+
+.view_work_company_name_div{display: block;font-size: 15px;} 
 
  
 
@@ -43,6 +85,11 @@
     padding: 1em 0 0}
 .advert_icon_cell_div{width: 60px;   }
 .advert_town_cell_div{width: 190px;padding-top: 10px;padding-left: 10px;}
+
+.view_advert_cat_company_cell_div{margin: 0 240px 0 62px;
+    padding: 1em 0 0}
+.view_advert_icon_cell_div{width: 60px;   }
+.view_advert_town_cell_div{width: 210px;padding-top: 10px;padding-left: 50px;}
 
 
 
@@ -95,12 +142,15 @@ form{margin-bottom: 5px;}
 #emaildivlogo,#emaildivtext{margin-top: 10px;display:inline-block}
 #telefondivlogo{display:inline-block;}
 
+#emaildivtext{margin-left: 5px;}
+
 #div_page_text_moderation1,#div_page_text_moderation2,#div_page_text_moderation3,#money_div_content,#money_div_logo,#emaildivlogo,#telefondivlogo,#telefondivcontent,
 #money_div_content,#money_div_logo,#emaildivtext, #work_company_name_div,#basedemands-spalogo{font-size: 16px;}
 
 #work_company_name_div{margin-top: 6px;}
 
 #money_div_content,#money_div_logo,#telefondivcontent{display: inline-block;}
+#telefondivcontent{margin-left: 5px;}
 
 #site-link{font-size: 16px;}
  
@@ -171,9 +221,14 @@ height:50px;display:inline-block;margin-top:10px;width:620px;
 
  
 
+ul, ol {
+    margin: 0 0 9px 5px;
+    padding: 0;
+}
  
-  
-#aboutdiv{float: right;}
+
+ 
+ #aboutdiv{float: right;}
 
 #div_work_type{margin-top: 6px;}
 
@@ -188,6 +243,10 @@ height:50px;display:inline-block;margin-top:10px;width:620px;
 .work_town{display: inline-block;}
 
 .work_cat_div{display: block;font-weight: bold;font-size: 0.875emp;margin-top: 5px;}
+.view_work_cat_div{display: block;font-weight: bold;font-size: 20px;margin-top: 5px;}
+
+.view_work_company_name_div{}
+
 
 .btn-info{width:150px;}
 
@@ -201,7 +260,7 @@ height:50px;display:inline-block;margin-top:10px;width:620px;
 
 
 .label-warning{background-color:#ED8845; }
-.label{padding-top: 5px;padding-bottom: 5px;font-family: Arial;font-weight: normal;font-size: 12px;  }
+.label{padding-top: 5px;padding-bottom: 5px;font-family: Arial;font-weight: normal;font-size: 10px;  }
 
  
 

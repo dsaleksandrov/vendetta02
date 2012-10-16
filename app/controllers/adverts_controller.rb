@@ -77,6 +77,9 @@ end
  end
 
 
+ 
+
+
 def moderation
 @advert = Advert.find(params[:id])
 end
