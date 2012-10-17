@@ -20,17 +20,17 @@
 
           .view_advert_table_div
             .view_advert_cell_div
-              .advert_icon_cell_div
-                -if !@advert.logo.nil? && !@advert.logo.blank?
-                  %img{:src=>"#{@advert.logo}",:class=>"advert_cell_img"}
+              .view_advert_icon_cell_div
+                -if !@advert.icon.nil? && !@advert.icon.blank?
+                  %img{:src=>"#{@advert.icon}",:class=>"view_advert_cell_img"}
                 -else
                   %img{:src=>"../images/work2.png"}
-              .advert_town_cell_div
+              .view_advert_town_cell_div
                 .work_img_div
                   %img{:src=>"../images/location2.png",:height=>"40",:width=>"40"}
                 .work_towncountry_div
                   =@advert.town_country
-              .advert_worktype_timecr_cell_div
+              .view_advert_worktype_timecr_cell_div
                 .div_work_type
                   -if @advert.employment_type == 'fulltime'
                     %span{:class=>"label label-info"} Полная занятость
@@ -43,10 +43,10 @@
                 .div_time_create
                   -if !@advert.site.nil? && !@advert.site.blank?
                     %a{:href=>"http://#{@advert.site}",:id=>"site-link",:target=>"_blank"} #{@advert.site}
-              .advert_cat_company_cell_div
-                .work_cat_div
+              .view_advert_cat_company_cell_div
+                .view_work_cat_div
                   =@advert.work_category
-                .work_company_name_div
+                .view_work_company_name_div
                   =@advert.company
           %hr
           #money_div_logo
@@ -56,13 +56,13 @@
           -if !@advert.email.nil? && !@advert.email.blank?
             %hr
             #emaildivlogo 
-              email:
+              %img{:src=>"../images/mail.png",:height=>"40",:width=>"45"}
             #emaildivtext
               #{@advert.email}
             %hr
           -if !@advert.telefon.nil? && !@advert.telefon.blank?
             #telefondivlogo
-              контактный телефон:
+              %img{:src=>"../images/phone.png",:height=>"40",:width=>"45"}
             #telefondivcontent
               #{@advert.telefon}
             %hr
@@ -87,7 +87,9 @@
         .aboutheader Лучшая работа для студентов!
         .aboutwork
           %ul
-            %li Только лучшие вакансии!
-            %li Нет утомительной регистрации!=)
-            %li Мы находим работу, которую Вы ищите!
-            %li Наш сайт посещают молодые, амбициозные люди=)!
+            %img{:src=>"../images/mgu.jpg",:height=>"60",:width=>"70"}
+            %img{:src=>"../images/mgimologo-big_eng.jpg",:height=>"60",:width=>"70"}
+            %img{:src=>"../images/rggu.jpeg",:height=>"60",:width=>"70"}
+            %img{:src=>"../images/she.jpg",:height=>"60",:width=>"70"}
+            %img{:src=>"../images/mirea.jpeg",:height=>"60",:width=>"70"}
+            %img{:src=>"../images/marhi.jpg",:height=>"60",:width=>"70"}
