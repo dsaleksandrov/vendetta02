@@ -2,34 +2,43 @@
 class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
+
+
+
+  
+
+
 def index
-condition = ['fulltime','parttime','remote','forone']. select{ |t|  params.has_key?(t.to_sym) }.join(' | ')
+condition = get_condition(params[:fulltime],params[:parttime],params[:remote],params[:forone])
 
-town= params[:town]
+condition = ['fulltime','parttime','remote','forone']. select{ |t|  params.has_key?(t.to_sym) }
+logger.info("cond!= "+condition.to_s)
 
-if !town.nil? && !town.blank?
-      if !condition.nil? && !condition.blank?
-        @adverts = Advert.search params[:search],:order => :created_at,:sort_mode => :desc, :conditions => {:town_country => params[:town],:employment_type=>condition}
-      else
+ town=  params[:town]
+ if !town.nil? && !town.blank?
+      if condition.nil?
         @adverts = Advert.search params[:search],:order => :created_at, :sort_mode => :desc, :conditions => {:town_country => params[:town]}
+      else
+        @adverts = Advert.search params[:search],:order => :created_at,:sort_mode => :desc, :conditions => {:town_country => params[:town],:employment_type=>condition}
       end
-else
-  if !condition.nil? && !condition.blank?
-        @adverts = Advert.search params[:search],:order => :created_at, :sort_mode => :desc, :conditions => {:employment_type=>condition}
-    else
-        @adverts = Advert.search params[:search],:order => :created_at, :sort_mode => :desc
-    end
-end
+     
 
+ else
+   if condition.nil?      
+    @adverts = Advert.search params[:search],:order => :created_at, :sort_mode => :desc
+  else
+    @adverts = Advert.search params[:search],:order => :created_at, :sort_mode => :desc,  :conditions => {:employment_type=>condition}
+  end
+end
 
  respond_to do |format|
-    format.html
-    format.js
-    end
-end
+        format.html
+        format.js
+     end
+ end
 
 
- 
+
 
 
 def moderation
@@ -42,7 +51,7 @@ end
 # GET /adverts/preview
 # GET /adverts/preview.json
 def preview
-  if(!params.has_key?(:advert))
+  if(!params.has_key?(:advert)) 
        redirect_to :action => "index"
    else
     @advert = Advert.new(params[:advert])
@@ -57,11 +66,11 @@ def preview
     logger.info("Preview page begin load")
     respond_to do |format|
      # if @advert.save
-      # format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+      #  format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
         #format.json { render json: @advert, status: :created, location: @advert }
      # else
         format.html { render action: "preview" }
-        format.json
+        format.json  
      # end
     end
 
@@ -75,11 +84,11 @@ def preview
   @advert = Advert.new (params[:advert])
    respond_to do |format|
      # if @advert.save
-      # format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+      #  format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
         #format.json { render json: @advert, status: :created, location: @advert }
      # else
-        format.html { render "new" }
-        format.json
+        format.html { render  "new" }
+        format.json  
   
      # end
     end
@@ -143,7 +152,7 @@ def preview
         format.html { render action: "moderation" }
       else
         format.html { render "new" }
-        format.json
+        format.json  
       end
     end
   end
